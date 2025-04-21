@@ -342,11 +342,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <a data-type="chapter-link" href="coverage.html"><span class="icon ion-ios-stats"></span>Documentation coverage</a>
                     </li>
                     <li class="divider"></li>
-                    <li class="copyright">
-                        Documentation generated using <a href="https://compodoc.app/" target="_blank" rel="noopener noreferrer">
-                            <img data-src="images/compodoc-vectorise.png" class="img-responsive" data-type="compodoc-logo">
-                        </a>
-                    </li>
             </ul>
         </nav>
         `);
