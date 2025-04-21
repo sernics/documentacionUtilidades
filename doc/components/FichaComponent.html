@@ -1,0 +1,1343 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>login documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">login documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  FichaComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/home/formularios/ficha/ficha.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-ficha</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                                <code><a href="../components/UserInfoComponent.html" target="_self" >UserInfoComponent</a></code>
+                            <code>ReactiveFormsModule</code>
+                                <code><a href="../components/FeedbackComponent.html" target="_self" >FeedbackComponent</a></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./ficha.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./ficha.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#errorMessage" >errorMessage</a>
+                            </li>
+                            <li>
+                                <a href="#fichaForm" >fichaForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#FichaService" >FichaService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#hasRelativeInBinter" >hasRelativeInBinter</a>
+                            </li>
+                            <li>
+                                <a href="#iFichaForm" >iFichaForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#modalService" >modalService</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#saveSubject" >saveSubject</a>
+                            </li>
+                            <li>
+                                <a href="#toggleRelativeInBinter" >toggleRelativeInBinter</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: FormBuilder)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/home/formularios/ficha/ficha.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveSubject"></a>
+                    <span class="name">
+                        <span ><b>saveSubject</b></span>
+                        <a href="#saveSubject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveSubject()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="131"
+                                    class="link-to-prism">src/app/components/home/formularios/ficha/ficha.component.ts:131</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles the submission of the form data. Validates the form, displays error messages
+if the form is invalid, and sends the form data to the server if valid.</p>
+<ul>
+<li><p>If the form is invalid:</p>
+<ul>
+<li>Sets an error message prompting the user to fill out all required fields correctly.</li>
+<li>Marks all form fields as touched to display validation errors.</li>
+</ul>
+</li>
+<li><p>If the form is valid:</p>
+<ul>
+<li>Converts the form data to the <code>iFichaForms</code> interface.</li>
+<li>Sends the data to the server using the <code>FichaService.saveSubject</code> method.</li>
+<li>On success:<ul>
+<li>Displays a success message using the <code>modalService</code>.</li>
+<li>Resets the form.</li>
+</ul>
+</li>
+<li>On error:<ul>
+<li>Logs the error to the console.</li>
+<li>Displays an error message using the <code>modalService</code>.</li>
+<li>Sets a generic error message for the user.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleRelativeInBinter"></a>
+                    <span class="name">
+                        <span ><b>toggleRelativeInBinter</b></span>
+                        <a href="#toggleRelativeInBinter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleRelativeInBinter()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="75"
+                                    class="link-to-prism">src/app/components/home/formularios/ficha/ficha.component.ts:75</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Toggles the state of the <code>hasRelativeInBinter</code> property and updates the form validators accordingly.</p>
+<ul>
+<li>When <code>hasRelativeInBinter</code> is set to <code>true</code>, it applies the required validators to specific form controls,
+ensuring that the user provides necessary information.</li>
+<li>When <code>hasRelativeInBinter</code> is set to <code>false</code>, it clears the validators from those form controls.</li>
+</ul>
+<p>After updating the validators, it calls <code>updateValueAndValidity</code> on each affected form control to ensure
+the form&#39;s validation state is recalculated.</p>
+<p>Affected form controls:</p>
+<ul>
+<li><code>nombreExtra</code></li>
+<li><code>apellidosExtra</code></li>
+<li><code>parentescoExtra</code></li>
+<li><code>direccionExtra</code></li>
+<li><code>company</code></li>
+<li><code>puesto</code></li>
+<li><code>phoneExtra1</code> (also validates numeric pattern)</li>
+<li><code>phoneExtra2</code> (also validates numeric pattern)</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="errorMessage"></a>
+                    <span class="name">
+                        <span ><b>errorMessage</b></span>
+                        <a href="#errorMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/components/home/formularios/ficha/ficha.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fichaForm"></a>
+                    <span class="name">
+                        <span ><b>fichaForm</b></span>
+                        <a href="#fichaForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/home/formularios/ficha/ficha.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="FichaService"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>FichaService</b></span>
+                        <a href="#FichaService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(FichaService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/components/home/formularios/ficha/ficha.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasRelativeInBinter"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>hasRelativeInBinter</b></span>
+                        <a href="#hasRelativeInBinter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>WritableSignal&lt;boolean&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal(false)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/home/formularios/ficha/ficha.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="iFichaForm"></a>
+                    <span class="name">
+                        <span ><b>iFichaForm</b></span>
+                        <a href="#iFichaForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/iFichaForms.html" target="_self" >iFichaForms | null</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/home/formularios/ficha/ficha.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modalService"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>modalService</b></span>
+                        <a href="#modalService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ModalService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/home/formularios/ficha/ficha.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, inject, signal, WritableSignal } from &#x27;@angular/core&#x27;;
+import { UserInfoComponent } from &#x27;../user-info/user-info.component&#x27;;
+import {
+  ReactiveFormsModule,
+  FormBuilder,
+  FormGroup,
+  Validators,
+} from &#x27;@angular/forms&#x27;;
+import { iFichaForms } from &#x27;@app/models/iFichaForms&#x27;;
+import { FichaService } from &#x27;../../../../services/fichaService/ficha.service&#x27;;
+import { ModalService } from &#x27;@app/services/modalService/modal.service&#x27;;
+import { FeedbackComponent } from &#x27;@app/components/utils/modals/feedback/feedback.component&#x27;;
+@Component({
+  selector: &#x27;app-ficha&#x27;,
+  standalone: true,
+  imports: [UserInfoComponent, ReactiveFormsModule, FeedbackComponent],
+  templateUrl: &#x27;./ficha.component.html&#x27;,
+  styleUrls: [&#x27;./ficha.component.scss&#x27;],
+})
+export class FichaComponent {
+  protected FichaService &#x3D; inject(FichaService);
+  protected modalService &#x3D; inject(ModalService);
+  protected hasRelativeInBinter: WritableSignal&lt;boolean&gt; &#x3D; signal(false);
+  errorMessage: string | null &#x3D; null;
+  fichaForm: FormGroup;
+  iFichaForm: iFichaForms | null &#x3D; null;
+
+  constructor(private fb: FormBuilder) {
+    this.fichaForm &#x3D; this.fb.group({
+      nombre1: [&#x27;&#x27;, Validators.required],
+      apellidos1: [&#x27;&#x27;, Validators.required],
+      parentesco1: [&#x27;&#x27;, Validators.required],
+      dirreccion1: [&#x27;&#x27;, Validators.required],
+      phone11: [&#x27;&#x27;, [Validators.required, Validators.pattern(&#x27;^[0-9]+$&#x27;)]],
+      phone12: [&#x27;&#x27;, [Validators.required, Validators.pattern(&#x27;^[0-9]+$&#x27;)]],
+
+      nombre2: [&#x27;&#x27;, Validators.required],
+      apellidos2: [&#x27;&#x27;, Validators.required],
+      parentesco2: [&#x27;&#x27;, Validators.required],
+      direccion2: [&#x27;&#x27;, Validators.required],
+      phone21: [&#x27;&#x27;, [Validators.required, Validators.pattern(&#x27;^[0-9]+$&#x27;)]],
+      phone22: [&#x27;&#x27;, [Validators.required, Validators.pattern(&#x27;^[0-9]+$&#x27;)]],
+
+      nombreExtra: [&#x27;&#x27;],
+      apellidosExtra: [&#x27;&#x27;],
+      parentescoExtra: [&#x27;&#x27;],
+      direccionExtra: [&#x27;&#x27;],
+      company: [&#x27;&#x27;],
+      puesto: [&#x27;&#x27;],
+      phoneExtra1: [&#x27;&#x27;],
+      phoneExtra2: [&#x27;&#x27;],
+    });
+  }
+
+  /**
+   * Toggles the state of the &#x60;hasRelativeInBinter&#x60; property and updates the form validators accordingly.
+   * 
+   * - When &#x60;hasRelativeInBinter&#x60; is set to &#x60;true&#x60;, it applies the required validators to specific form controls,
+   *   ensuring that the user provides necessary information.
+   * - When &#x60;hasRelativeInBinter&#x60; is set to &#x60;false&#x60;, it clears the validators from those form controls.
+   * 
+   * After updating the validators, it calls &#x60;updateValueAndValidity&#x60; on each affected form control to ensure
+   * the form&#x27;s validation state is recalculated.
+   * 
+   * Affected form controls:
+   * - &#x60;nombreExtra&#x60;
+   * - &#x60;apellidosExtra&#x60;
+   * - &#x60;parentescoExtra&#x60;
+   * - &#x60;direccionExtra&#x60;
+   * - &#x60;company&#x60;
+   * - &#x60;puesto&#x60;
+   * - &#x60;phoneExtra1&#x60; (also validates numeric pattern)
+   * - &#x60;phoneExtra2&#x60; (also validates numeric pattern)
+   */
+  toggleRelativeInBinter() {
+    this.hasRelativeInBinter.set(!this.hasRelativeInBinter());
+
+    if (this.hasRelativeInBinter()) {
+      this.fichaForm.get(&#x27;nombreExtra&#x27;)?.setValidators(Validators.required);
+      this.fichaForm.get(&#x27;apellidosExtra&#x27;)?.setValidators(Validators.required);
+      this.fichaForm.get(&#x27;parentescoExtra&#x27;)?.setValidators(Validators.required);
+      this.fichaForm.get(&#x27;direccionExtra&#x27;)?.setValidators(Validators.required);
+      this.fichaForm.get(&#x27;company&#x27;)?.setValidators(Validators.required);
+      this.fichaForm.get(&#x27;puesto&#x27;)?.setValidators(Validators.required);
+      this.fichaForm
+        .get(&#x27;phoneExtra1&#x27;)
+        ?.setValidators([Validators.required, Validators.pattern(&#x27;^[0-9]+$&#x27;)]);
+      this.fichaForm
+        .get(&#x27;phoneExtra2&#x27;)
+        ?.setValidators([Validators.required, Validators.pattern(&#x27;^[0-9]+$&#x27;)]);
+    } else {
+      this.fichaForm.get(&#x27;nombreExtra&#x27;)?.clearValidators();
+      this.fichaForm.get(&#x27;apellidosExtra&#x27;)?.clearValidators();
+      this.fichaForm.get(&#x27;parentescoExtra&#x27;)?.clearValidators();
+      this.fichaForm.get(&#x27;direccionExtra&#x27;)?.clearValidators();
+      this.fichaForm.get(&#x27;company&#x27;)?.clearValidators();
+      this.fichaForm.get(&#x27;puesto&#x27;)?.clearValidators();
+      this.fichaForm.get(&#x27;phoneExtra1&#x27;)?.clearValidators();
+      this.fichaForm.get(&#x27;phoneExtra2&#x27;)?.clearValidators();
+    }
+
+    this.fichaForm.get(&#x27;nombreExtra&#x27;)?.updateValueAndValidity();
+    this.fichaForm.get(&#x27;apellidosExtra&#x27;)?.updateValueAndValidity();
+    this.fichaForm.get(&#x27;parentescoExtra&#x27;)?.updateValueAndValidity();
+    this.fichaForm.get(&#x27;direccionExtra&#x27;)?.updateValueAndValidity();
+    this.fichaForm.get(&#x27;company&#x27;)?.updateValueAndValidity();
+    this.fichaForm.get(&#x27;puesto&#x27;)?.updateValueAndValidity();
+    this.fichaForm.get(&#x27;phoneExtra1&#x27;)?.updateValueAndValidity();
+    this.fichaForm.get(&#x27;phoneExtra2&#x27;)?.updateValueAndValidity();
+  }
+
+  /**
+   * Handles the submission of the form data. Validates the form, displays error messages
+   * if the form is invalid, and sends the form data to the server if valid.
+   * 
+   * - If the form is invalid:
+   *   - Sets an error message prompting the user to fill out all required fields correctly.
+   *   - Marks all form fields as touched to display validation errors.
+   * 
+   * - If the form is valid:
+   *   - Converts the form data to the &#x60;iFichaForms&#x60; interface.
+   *   - Sends the data to the server using the &#x60;FichaService.saveSubject&#x60; method.
+   *   - On success:
+   *     - Displays a success message using the &#x60;modalService&#x60;.
+   *     - Resets the form.
+   *   - On error:
+   *     - Logs the error to the console.
+   *     - Displays an error message using the &#x60;modalService&#x60;.
+   *     - Sets a generic error message for the user.
+   */
+  saveSubject() {
+    this.errorMessage &#x3D; null;
+
+    if (this.fichaForm.invalid) {
+      this.errorMessage &#x3D;
+        &#x27;Por favor, rellene todos los campos obligatorios correctamente&#x27;;
+      this.fichaForm.markAllAsTouched();
+      return;
+    }
+
+    this.iFichaForm &#x3D; this.fichaForm.value as iFichaForms;
+    console.log(&#x27;Datos del formulario:&#x27;, this.iFichaForm);
+
+    this.FichaService.saveSubject(this.iFichaForm).subscribe({
+      next: (response) &#x3D;&gt; {
+        this.modalService.showSuccess(
+          &#x27;Éxito&#x27;,
+          &#x27;La información ha sido enviada con éxito&#x27;
+        );
+        this.fichaForm.reset();
+      },
+      error: (error) &#x3D;&gt; {
+        let errorMessage &#x3D; &#x27;Error desconocido. Por favor, intenta de nuevo.&#x27;;
+        console.log(error);
+
+        if (error &amp;&amp; error.error &amp;&amp; error.error.message) {
+          errorMessage &#x3D; error.error.message;
+        } else if (error &amp;&amp; error.message) {
+          errorMessage &#x3D; error.message;
+        }
+
+        this.modalService.showError(&#x27;Error&#x27;, errorMessage);
+        this.errorMessage &#x3D; &#x27;Error al enviar la comunicación. Intenta de nuevo.&#x27;;
+      },
+    });
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;padre&quot;&gt;
+  &lt;div class&#x3D;&quot;contact-form&quot;&gt;
+    &lt;h2&gt;
+      Create Emergency Response Plan Personal File / Ficha Personal de Datos
+      Plan Emergencia
+    &lt;/h2&gt;
+    &lt;hr /&gt;
+
+    &lt;p class&#x3D;&quot;information&quot;&gt;
+      It is the employee’s responsibility to keep his/her Emergency Response
+      Plan Personal File updated; the company will not be responsible for any
+      incorrect personal data provided by the employee.
+    &lt;/p&gt;
+    &lt;p class&#x3D;&quot;information&quot;&gt;
+      Es responsabilidad del trabajador actualizar su ficha del Plan de
+      Respuesta a Emergencias; la compañía no se hace responsable de datos
+      personales incorrectos facilitados por el trabajador.
+    &lt;/p&gt;
+    &lt;br /&gt;
+    &lt;app-user-info class&#x3D;&quot;info_user&quot;&gt;&lt;/app-user-info&gt;
+    &lt;br /&gt;
+
+    &lt;form [formGroup]&#x3D;&quot;fichaForm&quot;&gt;
+      &lt;!-- Primera persona de contacto --&gt;
+      &lt;div class&#x3D;&quot;contact-section&quot;&gt;
+        &lt;h3&gt;First contact person / Primera persona de contacto&lt;/h3&gt;
+        &lt;hr /&gt;
+        &lt;div class&#x3D;&quot;contact-fields&quot;&gt;
+          &lt;div class&#x3D;&quot;input-group&quot;&gt;
+            &lt;input
+              type&#x3D;&quot;text&quot;
+              id&#x3D;&quot;name&quot;
+              formControlName&#x3D;&quot;nombre1&quot;
+              placeholder&#x3D;&quot; &quot;
+            /&gt;
+            &lt;label for&#x3D;&quot;name&quot;&gt;Name / Nombre&lt;/label&gt;
+            @if (fichaForm.get(&#x27;nombre1&#x27;)?.touched &amp;&amp;
+            fichaForm.get(&#x27;nombre1&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+            }
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;input-group&quot;&gt;
+            &lt;input
+              type&#x3D;&quot;text&quot;
+              id&#x3D;&quot;surnames&quot;
+              formControlName&#x3D;&quot;apellidos1&quot;
+              placeholder&#x3D;&quot; &quot;
+            /&gt;
+            &lt;label for&#x3D;&quot;surnames&quot;&gt;Surnames / Apellidos&lt;/label&gt;
+            @if (fichaForm.get(&#x27;apellidos1&#x27;)?.touched &amp;&amp;
+            fichaForm.get(&#x27;apellidos1&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+            }
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;contact-fields&quot;&gt;
+          &lt;div class&#x3D;&quot;input-group&quot;&gt;
+            &lt;input
+              type&#x3D;&quot;text&quot;
+              id&#x3D;&quot;relationship&quot;
+              formControlName&#x3D;&quot;parentesco1&quot;
+              placeholder&#x3D;&quot; &quot;
+            /&gt;
+            &lt;label for&#x3D;&quot;relationship&quot;&gt;Relationship / Parentesco&lt;/label&gt;
+            @if (fichaForm.get(&#x27;parentesco1&#x27;)?.touched &amp;&amp;
+            fichaForm.get(&#x27;parentesco1&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+            }
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;input-group&quot;&gt;
+            &lt;input
+              type&#x3D;&quot;text&quot;
+              id&#x3D;&quot;address&quot;
+              formControlName&#x3D;&quot;dirreccion1&quot;
+              placeholder&#x3D;&quot; &quot;
+            /&gt;
+            &lt;label for&#x3D;&quot;address&quot;&gt;Address / Dirección&lt;/label&gt;
+            @if (fichaForm.get(&#x27;dirreccion1&#x27;)?.touched &amp;&amp;
+            fichaForm.get(&#x27;dirreccion1&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+            }
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;contact-fields&quot;&gt;
+          &lt;div class&#x3D;&quot;input-group&quot;&gt;
+            &lt;input
+              type&#x3D;&quot;tel&quot;
+              id&#x3D;&quot;phone1&quot;
+              formControlName&#x3D;&quot;phone11&quot;
+              placeholder&#x3D;&quot; &quot;
+            /&gt;
+            &lt;label for&#x3D;&quot;phone1&quot;&gt;Phone 1 / Teléfono 1&lt;/label&gt;
+            @if (fichaForm.get(&#x27;phone11&#x27;)?.touched &amp;&amp;
+            fichaForm.get(&#x27;phone11&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Teléfono obligatorio y solo números&lt;/div&gt;
+            }
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;input-group&quot;&gt;
+            &lt;input
+              type&#x3D;&quot;tel&quot;
+              id&#x3D;&quot;phone2&quot;
+              formControlName&#x3D;&quot;phone12&quot;
+              placeholder&#x3D;&quot; &quot;
+            /&gt;
+            &lt;label for&#x3D;&quot;phone2&quot;&gt;Phone 2 / Teléfono 2&lt;/label&gt;
+            @if (fichaForm.get(&#x27;phone12&#x27;)?.touched &amp;&amp;
+            fichaForm.get(&#x27;phone12&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Teléfono obligatorio y solo números&lt;/div&gt;
+            }
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;br /&gt;
+      &lt;!-- Segunda persona de contacto --&gt;
+      &lt;div class&#x3D;&quot;contact-section&quot;&gt;
+        &lt;h3&gt;Second contact person / Segunda persona de contacto&lt;/h3&gt;
+        &lt;hr /&gt;
+        &lt;div class&#x3D;&quot;contact-fields&quot;&gt;
+          &lt;div class&#x3D;&quot;input-group&quot;&gt;
+            &lt;input
+              type&#x3D;&quot;text&quot;
+              id&#x3D;&quot;second_name&quot;
+              formControlName&#x3D;&quot;nombre2&quot;
+              placeholder&#x3D;&quot; &quot;
+            /&gt;
+            &lt;label for&#x3D;&quot;second_name&quot;&gt;Name / Nombre&lt;/label&gt;
+            @if (fichaForm.get(&#x27;nombre2&#x27;)?.touched &amp;&amp;
+            fichaForm.get(&#x27;nombre2&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+            }
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;input-group&quot;&gt;
+            &lt;input
+              type&#x3D;&quot;text&quot;
+              id&#x3D;&quot;second_surnames&quot;
+              formControlName&#x3D;&quot;apellidos2&quot;
+              placeholder&#x3D;&quot; &quot;
+            /&gt;
+            &lt;label for&#x3D;&quot;second_surnames&quot;&gt;Surnames / Apellidos&lt;/label&gt;
+            @if (fichaForm.get(&#x27;apellidos2&#x27;)?.touched &amp;&amp;
+            fichaForm.get(&#x27;apellidos2&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+            }
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;contact-fields&quot;&gt;
+          &lt;div class&#x3D;&quot;input-group&quot;&gt;
+            &lt;input
+              type&#x3D;&quot;text&quot;
+              id&#x3D;&quot;second_relationship&quot;
+              formControlName&#x3D;&quot;parentesco2&quot;
+              placeholder&#x3D;&quot; &quot;
+            /&gt;
+            &lt;label for&#x3D;&quot;second_relationship&quot;&gt;Relationship / Parentesco&lt;/label&gt;
+            @if (fichaForm.get(&#x27;parentesco2&#x27;)?.touched &amp;&amp;
+            fichaForm.get(&#x27;parentesco2&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+            }
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;input-group&quot;&gt;
+            &lt;input
+              type&#x3D;&quot;text&quot;
+              id&#x3D;&quot;second_address&quot;
+              formControlName&#x3D;&quot;direccion2&quot;
+              placeholder&#x3D;&quot; &quot;
+            /&gt;
+            &lt;label for&#x3D;&quot;second_address&quot;&gt;Address / Dirección&lt;/label&gt;
+            @if (fichaForm.get(&#x27;direccion2&#x27;)?.touched &amp;&amp;
+            fichaForm.get(&#x27;direccion2&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+            }
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;contact-fields&quot;&gt;
+          &lt;div class&#x3D;&quot;input-group&quot;&gt;
+            &lt;input
+              type&#x3D;&quot;tel&quot;
+              id&#x3D;&quot;second_phone1&quot;
+              formControlName&#x3D;&quot;phone21&quot;
+              placeholder&#x3D;&quot; &quot;
+            /&gt;
+            &lt;label for&#x3D;&quot;second_phone1&quot;&gt;Phone 1 / Teléfono 1&lt;/label&gt;
+            @if (fichaForm.get(&#x27;phone21&#x27;)?.touched &amp;&amp;
+            fichaForm.get(&#x27;phone21&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Teléfono obligatorio y solo números&lt;/div&gt;
+            }
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;input-group&quot;&gt;
+            &lt;input
+              type&#x3D;&quot;tel&quot;
+              id&#x3D;&quot;second_phone2&quot;
+              formControlName&#x3D;&quot;phone22&quot;
+              placeholder&#x3D;&quot; &quot;
+            /&gt;
+            &lt;label for&#x3D;&quot;second_phone2&quot;&gt;Phone 2 / Teléfono 2&lt;/label&gt;
+            @if (fichaForm.get(&#x27;phone22&#x27;)?.touched &amp;&amp;
+            fichaForm.get(&#x27;phone22&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Teléfono obligatorio y solo números&lt;/div&gt;
+            }
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Checkbox --&gt;
+      &lt;div class&#x3D;&quot;checkbox-container&quot;&gt;
+        &lt;input
+          type&#x3D;&quot;checkbox&quot;
+          id&#x3D;&quot;binter&quot;
+          [checked]&#x3D;&quot;hasRelativeInBinter()&quot;
+          (change)&#x3D;&quot;toggleRelativeInBinter()&quot;
+        /&gt;
+        &lt;label for&#x3D;&quot;binter&quot;&gt;
+          Do you have any relative in the Binter System? / ¿Tiene un familiar en
+          el sistema Binter?
+        &lt;/label&gt;
+      &lt;/div&gt;
+
+      &lt;!-- Datos del familiar (si aplica) --&gt;
+      @if (hasRelativeInBinter()) {
+      &lt;div class&#x3D;&quot;contact-section&quot;&gt;
+        &lt;h3&gt;Personal Data of Employee&#x27;s Relative in Binter System&lt;/h3&gt;
+        &lt;hr /&gt;
+        &lt;div class&#x3D;&quot;contact-fields&quot;&gt;
+          &lt;div class&#x3D;&quot;input-group&quot;&gt;
+            &lt;input
+              type&#x3D;&quot;text&quot;
+              id&#x3D;&quot;name-relative&quot;
+              formControlName&#x3D;&quot;nombreExtra&quot;
+              placeholder&#x3D;&quot; &quot;
+            /&gt;
+            &lt;label for&#x3D;&quot;name-relative&quot;&gt;Name / Nombre&lt;/label&gt;
+            @if (fichaForm.get(&#x27;nombreExtra&#x27;)?.touched &amp;&amp;
+            fichaForm.get(&#x27;nombreExtra&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+            }
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;input-group&quot;&gt;
+            &lt;input
+              type&#x3D;&quot;text&quot;
+              id&#x3D;&quot;surnames-relative&quot;
+              formControlName&#x3D;&quot;apellidosExtra&quot;
+              placeholder&#x3D;&quot; &quot;
+            /&gt;
+            &lt;label for&#x3D;&quot;surnames-relative&quot;&gt;Surnames / Apellidos&lt;/label&gt;
+            @if (fichaForm.get(&#x27;apellidosExtra&#x27;)?.touched &amp;&amp;
+            fichaForm.get(&#x27;apellidosExtra&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+            }
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;contact-fields&quot;&gt;
+          &lt;div class&#x3D;&quot;input-group&quot;&gt;
+            &lt;input
+              type&#x3D;&quot;text&quot;
+              id&#x3D;&quot;relationship-relative&quot;
+              formControlName&#x3D;&quot;parentescoExtra&quot;
+              placeholder&#x3D;&quot; &quot;
+            /&gt;
+            &lt;label for&#x3D;&quot;relationship-relative&quot;&gt;Relationship / Parentesco&lt;/label&gt;
+            @if (fichaForm.get(&#x27;parentescoExtra&#x27;)?.touched &amp;&amp;
+            fichaForm.get(&#x27;parentescoExtra&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+            }
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;input-group&quot;&gt;
+            &lt;input
+              type&#x3D;&quot;text&quot;
+              id&#x3D;&quot;address-relative&quot;
+              formControlName&#x3D;&quot;direccionExtra&quot;
+              placeholder&#x3D;&quot; &quot;
+            /&gt;
+            &lt;label for&#x3D;&quot;address-relative&quot;&gt;Address / Dirección&lt;/label&gt;
+            @if (fichaForm.get(&#x27;direccionExtra&#x27;)?.touched &amp;&amp;
+            fichaForm.get(&#x27;direccionExtra&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+            }
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;contact-fields&quot;&gt;
+          &lt;div class&#x3D;&quot;input-group&quot;&gt;
+            &lt;input
+              type&#x3D;&quot;text&quot;
+              id&#x3D;&quot;company-relative&quot;
+              formControlName&#x3D;&quot;company&quot;
+              placeholder&#x3D;&quot; &quot;
+            /&gt;
+            &lt;label for&#x3D;&quot;company-relative&quot;&gt;Company Name / Compañía&lt;/label&gt;
+            @if (fichaForm.get(&#x27;company&#x27;)?.touched &amp;&amp;
+            fichaForm.get(&#x27;company&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+            }
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;input-group&quot;&gt;
+            &lt;input
+              type&#x3D;&quot;text&quot;
+              id&#x3D;&quot;position-relative&quot;
+              formControlName&#x3D;&quot;puesto&quot;
+              placeholder&#x3D;&quot; &quot;
+            /&gt;
+            &lt;label for&#x3D;&quot;position-relative&quot;&gt;Position / Puesto&lt;/label&gt;
+            @if (fichaForm.get(&#x27;puesto&#x27;)?.touched &amp;&amp;
+            fichaForm.get(&#x27;puesto&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+            }
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;contact-fields&quot;&gt;
+          &lt;div class&#x3D;&quot;input-group&quot;&gt;
+            &lt;input
+              type&#x3D;&quot;tel&quot;
+              id&#x3D;&quot;phone1-relative&quot;
+              formControlName&#x3D;&quot;phoneExtra1&quot;
+              placeholder&#x3D;&quot; &quot;
+            /&gt;
+            &lt;label for&#x3D;&quot;phone1-relative&quot;&gt;Phone 1 / Teléfono 1&lt;/label&gt;
+            @if (fichaForm.get(&#x27;phoneExtra1&#x27;)?.touched &amp;&amp;
+            fichaForm.get(&#x27;phoneExtra1&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Teléfono obligatorio y solo números&lt;/div&gt;
+            }
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;input-group&quot;&gt;
+            &lt;input
+              type&#x3D;&quot;tel&quot;
+              id&#x3D;&quot;phone2-relative&quot;
+              formControlName&#x3D;&quot;phoneExtra2&quot;
+              placeholder&#x3D;&quot; &quot;
+            /&gt;
+            &lt;label for&#x3D;&quot;phone2-relative&quot;&gt;Phone 2 / Teléfono 2&lt;/label&gt;
+            @if (fichaForm.get(&#x27;phoneExtra2&#x27;)?.touched &amp;&amp;
+            fichaForm.get(&#x27;phoneExtra2&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Teléfono obligatorio y solo números&lt;/div&gt;
+            }
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      }
+
+      &lt;!-- Botón de envío --&gt;
+      &lt;div class&#x3D;&quot;sendBtnDiv&quot;&gt;
+        @if (errorMessage) {
+        &lt;p class&#x3D;&quot;error-message&quot; style&#x3D;&quot;color: red&quot;&gt;{{ errorMessage }}&lt;/p&gt;
+        }
+        &lt;button class&#x3D;&quot;send-button&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;saveSubject()&quot;&gt;
+          Send / Enviar
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+  &lt;app-feedback&gt;&lt;/app-feedback&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./ficha.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@use &quot;sass:color&quot;;
+@use &quot;sass:map&quot;;
+@use &quot;../../../../../styles&quot; as *;
+@use &quot;mixins&quot; as *;
+
+$gradient-color: map.get($custom-palette, 50);
+
+// Validación del color
+@if not $gradient-color {
+  @error &quot;$gradient-color no es un color válido. Revisa la variable.&quot;;
+}
+
+.padre {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  margin: 5px auto 0 auto;
+}
+
+// Estilos de los textarea (transformados en líneas de texto con degradado)
+.input-group {
+  width: 100%;
+  @include groupInput(map.get($custom-palette, 50), red);
+}
+
+// Botón de envío con estilo de color ajustado
+.send-button {
+  @include boton(map.get($custom-palette, 50), white);
+}
+
+.sendBtnDiv {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: auto;
+  padding: 35px;
+}
+
+h3,
+h2 {
+  display: flex;
+  align-items: center;
+  color: map.get($custom-palette, 50);
+}
+
+.contact-fields {
+  display: flex;
+  justify-content: left;
+  margin: 15px 0px;
+}
+
+.information {
+  color: red;
+}
+
+hr {
+  @include hr(map.get($custom-palette, 50));
+  margin-bottom: 30px;
+}
+
+.error {
+  color: red;
+  margin: 5px;
+  font-size: small;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="padre">  <div class="contact-form">    <h2>      Create Emergency Response Plan Personal File / Ficha Personal de Datos      Plan Emergencia    </h2>    <hr />    <p class="information">      It is the employee’s responsibility to keep his/her Emergency Response      Plan Personal File updated; the company will not be responsible for any      incorrect personal data provided by the employee.    </p>    <p class="information">      Es responsabilidad del trabajador actualizar su ficha del Plan de      Respuesta a Emergencias; la compañía no se hace responsable de datos      personales incorrectos facilitados por el trabajador.    </p>    <br />    <app-user-info class="info_user"></app-user-info>    <br />    <form [formGroup]="fichaForm">      <!-- Primera persona de contacto -->      <div class="contact-section">        <h3>First contact person / Primera persona de contacto</h3>        <hr />        <div class="contact-fields">          <div class="input-group">            <input              type="text"              id="name"              formControlName="nombre1"              placeholder=" "            />            <label for="name">Name / Nombre</label>            @if (fichaForm.get(\'nombre1\')?.touched &&            fichaForm.get(\'nombre1\')?.invalid) {            <div class="error">Este campo es obligatorio</div>            }          </div>          <div class="input-group">            <input              type="text"              id="surnames"              formControlName="apellidos1"              placeholder=" "            />            <label for="surnames">Surnames / Apellidos</label>            @if (fichaForm.get(\'apellidos1\')?.touched &&            fichaForm.get(\'apellidos1\')?.invalid) {            <div class="error">Este campo es obligatorio</div>            }          </div>        </div>        <div class="contact-fields">          <div class="input-group">            <input              type="text"              id="relationship"              formControlName="parentesco1"              placeholder=" "            />            <label for="relationship">Relationship / Parentesco</label>            @if (fichaForm.get(\'parentesco1\')?.touched &&            fichaForm.get(\'parentesco1\')?.invalid) {            <div class="error">Este campo es obligatorio</div>            }          </div>          <div class="input-group">            <input              type="text"              id="address"              formControlName="dirreccion1"              placeholder=" "            />            <label for="address">Address / Dirección</label>            @if (fichaForm.get(\'dirreccion1\')?.touched &&            fichaForm.get(\'dirreccion1\')?.invalid) {            <div class="error">Este campo es obligatorio</div>            }          </div>        </div>        <div class="contact-fields">          <div class="input-group">            <input              type="tel"              id="phone1"              formControlName="phone11"              placeholder=" "            />            <label for="phone1">Phone 1 / Teléfono 1</label>            @if (fichaForm.get(\'phone11\')?.touched &&            fichaForm.get(\'phone11\')?.invalid) {            <div class="error">Teléfono obligatorio y solo números</div>            }          </div>          <div class="input-group">            <input              type="tel"              id="phone2"              formControlName="phone12"              placeholder=" "            />            <label for="phone2">Phone 2 / Teléfono 2</label>            @if (fichaForm.get(\'phone12\')?.touched &&            fichaForm.get(\'phone12\')?.invalid) {            <div class="error">Teléfono obligatorio y solo números</div>            }          </div>        </div>      </div>      <br />      <!-- Segunda persona de contacto -->      <div class="contact-section">        <h3>Second contact person / Segunda persona de contacto</h3>        <hr />        <div class="contact-fields">          <div class="input-group">            <input              type="text"              id="second_name"              formControlName="nombre2"              placeholder=" "            />            <label for="second_name">Name / Nombre</label>            @if (fichaForm.get(\'nombre2\')?.touched &&            fichaForm.get(\'nombre2\')?.invalid) {            <div class="error">Este campo es obligatorio</div>            }          </div>          <div class="input-group">            <input              type="text"              id="second_surnames"              formControlName="apellidos2"              placeholder=" "            />            <label for="second_surnames">Surnames / Apellidos</label>            @if (fichaForm.get(\'apellidos2\')?.touched &&            fichaForm.get(\'apellidos2\')?.invalid) {            <div class="error">Este campo es obligatorio</div>            }          </div>        </div>        <div class="contact-fields">          <div class="input-group">            <input              type="text"              id="second_relationship"              formControlName="parentesco2"              placeholder=" "            />            <label for="second_relationship">Relationship / Parentesco</label>            @if (fichaForm.get(\'parentesco2\')?.touched &&            fichaForm.get(\'parentesco2\')?.invalid) {            <div class="error">Este campo es obligatorio</div>            }          </div>          <div class="input-group">            <input              type="text"              id="second_address"              formControlName="direccion2"              placeholder=" "            />            <label for="second_address">Address / Dirección</label>            @if (fichaForm.get(\'direccion2\')?.touched &&            fichaForm.get(\'direccion2\')?.invalid) {            <div class="error">Este campo es obligatorio</div>            }          </div>        </div>        <div class="contact-fields">          <div class="input-group">            <input              type="tel"              id="second_phone1"              formControlName="phone21"              placeholder=" "            />            <label for="second_phone1">Phone 1 / Teléfono 1</label>            @if (fichaForm.get(\'phone21\')?.touched &&            fichaForm.get(\'phone21\')?.invalid) {            <div class="error">Teléfono obligatorio y solo números</div>            }          </div>          <div class="input-group">            <input              type="tel"              id="second_phone2"              formControlName="phone22"              placeholder=" "            />            <label for="second_phone2">Phone 2 / Teléfono 2</label>            @if (fichaForm.get(\'phone22\')?.touched &&            fichaForm.get(\'phone22\')?.invalid) {            <div class="error">Teléfono obligatorio y solo números</div>            }          </div>        </div>      </div>      <!-- Checkbox -->      <div class="checkbox-container">        <input          type="checkbox"          id="binter"          [checked]="hasRelativeInBinter()"          (change)="toggleRelativeInBinter()"        />        <label for="binter">          Do you have any relative in the Binter System? / ¿Tiene un familiar en          el sistema Binter?        </label>      </div>      <!-- Datos del familiar (si aplica) -->      @if (hasRelativeInBinter()) {      <div class="contact-section">        <h3>Personal Data of Employee\'s Relative in Binter System</h3>        <hr />        <div class="contact-fields">          <div class="input-group">            <input              type="text"              id="name-relative"              formControlName="nombreExtra"              placeholder=" "            />            <label for="name-relative">Name / Nombre</label>            @if (fichaForm.get(\'nombreExtra\')?.touched &&            fichaForm.get(\'nombreExtra\')?.invalid) {            <div class="error">Este campo es obligatorio</div>            }          </div>          <div class="input-group">            <input              type="text"              id="surnames-relative"              formControlName="apellidosExtra"              placeholder=" "            />            <label for="surnames-relative">Surnames / Apellidos</label>            @if (fichaForm.get(\'apellidosExtra\')?.touched &&            fichaForm.get(\'apellidosExtra\')?.invalid) {            <div class="error">Este campo es obligatorio</div>            }          </div>        </div>        <div class="contact-fields">          <div class="input-group">            <input              type="text"              id="relationship-relative"              formControlName="parentescoExtra"              placeholder=" "            />            <label for="relationship-relative">Relationship / Parentesco</label>            @if (fichaForm.get(\'parentescoExtra\')?.touched &&            fichaForm.get(\'parentescoExtra\')?.invalid) {            <div class="error">Este campo es obligatorio</div>            }          </div>          <div class="input-group">            <input              type="text"              id="address-relative"              formControlName="direccionExtra"              placeholder=" "            />            <label for="address-relative">Address / Dirección</label>            @if (fichaForm.get(\'direccionExtra\')?.touched &&            fichaForm.get(\'direccionExtra\')?.invalid) {            <div class="error">Este campo es obligatorio</div>            }          </div>        </div>        <div class="contact-fields">          <div class="input-group">            <input              type="text"              id="company-relative"              formControlName="company"              placeholder=" "            />            <label for="company-relative">Company Name / Compañía</label>            @if (fichaForm.get(\'company\')?.touched &&            fichaForm.get(\'company\')?.invalid) {            <div class="error">Este campo es obligatorio</div>            }          </div>          <div class="input-group">            <input              type="text"              id="position-relative"              formControlName="puesto"              placeholder=" "            />            <label for="position-relative">Position / Puesto</label>            @if (fichaForm.get(\'puesto\')?.touched &&            fichaForm.get(\'puesto\')?.invalid) {            <div class="error">Este campo es obligatorio</div>            }          </div>        </div>        <div class="contact-fields">          <div class="input-group">            <input              type="tel"              id="phone1-relative"              formControlName="phoneExtra1"              placeholder=" "            />            <label for="phone1-relative">Phone 1 / Teléfono 1</label>            @if (fichaForm.get(\'phoneExtra1\')?.touched &&            fichaForm.get(\'phoneExtra1\')?.invalid) {            <div class="error">Teléfono obligatorio y solo números</div>            }          </div>          <div class="input-group">            <input              type="tel"              id="phone2-relative"              formControlName="phoneExtra2"              placeholder=" "            />            <label for="phone2-relative">Phone 2 / Teléfono 2</label>            @if (fichaForm.get(\'phoneExtra2\')?.touched &&            fichaForm.get(\'phoneExtra2\')?.invalid) {            <div class="error">Teléfono obligatorio y solo números</div>            }          </div>        </div>      </div>      }      <!-- Botón de envío -->      <div class="sendBtnDiv">        @if (errorMessage) {        <p class="error-message" style="color: red">{{ errorMessage }}</p>        }        <button class="send-button" type="button" (click)="saveSubject()">          Send / Enviar        </button>      </div>    </form>  </div>  <app-feedback></app-feedback></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AvisoLegalComponent', 'selector': 'app-aviso-legal'},{'name': 'BackOfficeComponent', 'selector': 'app-back-office'},{'name': 'ComunicacionComponent', 'selector': 'app-comunicacion'},{'name': 'ComunicacionDirectaComponent', 'selector': 'app-comunicacion-directa'},{'name': 'DatosTCPComponent', 'selector': 'app-datos-tcp'},{'name': 'ErrorComponent', 'selector': ''},{'name': 'FeedbackComponent', 'selector': 'app-feedback'},{'name': 'FichaComponent', 'selector': 'app-ficha'},{'name': 'FichaInfoComponent', 'selector': 'app-ficha-info'},{'name': 'FichaPlanEmergenciaComponent', 'selector': 'app-ficha-plan-emergencia'},{'name': 'FichaUserInfoComponent', 'selector': 'app-ficha-user-info'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormulariosComponent', 'selector': 'app-formularios'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LinkerComponent', 'selector': 'app-linker'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NominaComponent', 'selector': 'app-nomina'},{'name': 'NominasVaciasComponent', 'selector': 'app-nominas-vacias'},{'name': 'PeticionVacacionesComponent', 'selector': 'app-peticion-vacaciones'},{'name': 'ReclamacionNominaComponent', 'selector': 'app-reclamacion-nomina'},{'name': 'RespuestasComponent', 'selector': 'app-respuestas'},{'name': 'SendRespuestaComponent', 'selector': 'app-send-respuesta'},{'name': 'SolicitudComponent', 'selector': 'app-solicitud'},{'name': 'TableComponent', 'selector': 'app-table'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'VacacionesComponent', 'selector': 'app-vacaciones'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'FichaComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'FichaComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

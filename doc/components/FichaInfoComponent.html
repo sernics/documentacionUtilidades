@@ -1,0 +1,1428 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>login documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">login documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  FichaInfoComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/home/formularios/datos-tcp/ficha-info/ficha-info.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-ficha-info</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>ReactiveFormsModule</code>
+                                <code><a href="../components/FeedbackComponent.html" target="_self" >FeedbackComponent</a></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./ficha-info.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./ficha-info.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#errorMessage" >errorMessage</a>
+                            </li>
+                            <li>
+                                <a href="#fichaForm" >fichaForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#FichaService" >FichaService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#hasRelativeInBinter" >hasRelativeInBinter</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#modalService" >modalService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#router" >router</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getUrl" >getUrl</a>
+                            </li>
+                            <li>
+                                <a href="#loadFichaData" >loadFichaData</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnChanges" >ngOnChanges</a>
+                            </li>
+                            <li>
+                                <a href="#saveFicha" >saveFicha</a>
+                            </li>
+                            <li>
+                                <a href="#toggleRelativeInBinter" >toggleRelativeInBinter</a>
+                            </li>
+                            <li>
+                                <a href="#toggleRelativeValidators" >toggleRelativeValidators</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ficha" >ficha</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: FormBuilder)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/home/formularios/datos-tcp/ficha-info/ficha-info.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ficha"></a>
+                        <b>ficha</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/iFichaPersonal.html" target="_self" >iFichaPersonal[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/home/formularios/datos-tcp/ficha-info/ficha-info.component.ts:19</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUrl"></a>
+                    <span class="name">
+                        <span ><b>getUrl</b></span>
+                        <a href="#getUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUrl()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="239"
+                                    class="link-to-prism">src/app/components/home/formularios/datos-tcp/ficha-info/ficha-info.component.ts:239</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Retrieves the current URL path from the router, excluding any hash fragment (<code>#</code>).
+If a hash fragment is present, it extracts and returns the portion of the URL after <code>#/</code>.
+Otherwise, it returns the full URL as is.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The extracted URL path or the full URL if no hash fragment is found.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadFichaData"></a>
+                    <span class="name">
+                        <span ><b>loadFichaData</b></span>
+                        <a href="#loadFichaData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadFichaData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="92"
+                                    class="link-to-prism">src/app/components/home/formularios/datos-tcp/ficha-info/ficha-info.component.ts:92</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Loads and maps data from the <code>ficha</code> array into the <code>fichaForm</code> form group.</p>
+<p>This method searches for specific entries in the <code>ficha</code> array based on the <code>tipoGrado</code> property
+and assigns their values to corresponding fields in the form. It also sets a flag indicating
+whether a relative is associated with the company and toggles related validators.</p>
+<p>The mapping is as follows:</p>
+<ul>
+<li><code>contact1</code>: Entry with <code>tipoGrado</code> equal to &#39;1&#39;.</li>
+<li><code>contact2</code>: Entry with <code>tipoGrado</code> equal to &#39;2&#39;.</li>
+<li><code>contact3</code>: Entry with <code>tipoGrado</code> equal to &#39;3&#39;.</li>
+</ul>
+<p>If no matching entry is found for a specific <code>tipoGrado</code>, an empty object is used as a fallback.</p>
+<ul>
+<li>The method uses optional chaining and default values to ensure robustness against missing data.</li>
+<li>The <code>hasRelativeInBinter</code> flag is set based on the presence of <code>company</code> or <code>puesto</code> in <code>contact3</code>.</li>
+</ul>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-html">// Example usage:
+this.loadFichaData();</code></pre></div></div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnChanges"></a>
+                    <span class="name">
+                        <span ><b>ngOnChanges</b></span>
+                        <a href="#ngOnChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnChanges()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="66"
+                                    class="link-to-prism">src/app/components/home/formularios/datos-tcp/ficha-info/ficha-info.component.ts:66</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Lifecycle hook that is called when any data-bound property of a directive changes.
+This method is triggered whenever Angular detects changes to the input properties
+of the component. It is used here to load the ficha data whenever such changes occur.</p>
+<p>Ensure that the <code>loadFichaData</code> method handles any necessary cleanup or reinitialization
+to properly reflect the updated state of the component.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveFicha"></a>
+                    <span class="name">
+                        <span ><b>saveFicha</b></span>
+                        <a href="#saveFicha"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveFicha()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="199"
+                                    class="link-to-prism">src/app/components/home/formularios/datos-tcp/ficha-info/ficha-info.component.ts:199</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles the save operation for the ficha form.</p>
+<p>This method validates the form, displays an error message if the form is invalid,
+and sends the form data to the server if valid. Upon successful submission, a success
+modal is displayed. If an error occurs during submission, an error modal is shown
+with the appropriate error message.</p>
+<ul>
+<li>The form is marked as touched if invalid to highlight validation errors.</li>
+<li>Error messages are derived from the API response or fallback to a generic message.</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleRelativeInBinter"></a>
+                    <span class="name">
+                        <span ><b>toggleRelativeInBinter</b></span>
+                        <a href="#toggleRelativeInBinter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleRelativeInBinter()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="131"
+                                    class="link-to-prism">src/app/components/home/formularios/datos-tcp/ficha-info/ficha-info.component.ts:131</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Toggles the state of the <code>hasRelativeInBinter</code> property and updates the related validators.</p>
+<p>This method inverts the current value of <code>hasRelativeInBinter</code> and then calls
+<code>toggleRelativeValidators</code> to ensure the form validators are updated accordingly.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleRelativeValidators"></a>
+                    <span class="name">
+                        <span ><b>toggleRelativeValidators</b></span>
+                        <a href="#toggleRelativeValidators"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleRelativeValidators()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="154"
+                                    class="link-to-prism">src/app/components/home/formularios/datos-tcp/ficha-info/ficha-info.component.ts:154</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Toggles the validators for a set of form controls in the <code>fichaForm</code> based on the presence of a relative in Binter.</p>
+<ul>
+<li>If <code>hasRelativeInBinter()</code> returns <code>true</code>, required validators are applied to the specified form controls.</li>
+<li>If <code>hasRelativeInBinter()</code> returns <code>false</code>, all validators are cleared from the specified form controls.</li>
+</ul>
+<p>After updating the validators, the method ensures that the validity state of each control is recalculated by calling <code>updateValueAndValidity()</code>.</p>
+<p>Affected form controls:</p>
+<ul>
+<li><code>nombreExtra</code></li>
+<li><code>apellidosExtra</code></li>
+<li><code>parentescoExtra</code></li>
+<li><code>direccionExtra</code></li>
+<li><code>company</code></li>
+<li><code>puesto</code></li>
+<li><code>phoneExtra1</code> (also validates numeric pattern)</li>
+<li><code>phoneExtra2</code> (also validates numeric pattern)</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="errorMessage"></a>
+                    <span class="name">
+                        <span ><b>errorMessage</b></span>
+                        <a href="#errorMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/components/home/formularios/datos-tcp/ficha-info/ficha-info.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fichaForm"></a>
+                    <span class="name">
+                        <span ><b>fichaForm</b></span>
+                        <a href="#fichaForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/home/formularios/datos-tcp/ficha-info/ficha-info.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="FichaService"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>FichaService</b></span>
+                        <a href="#FichaService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(FichaService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/home/formularios/datos-tcp/ficha-info/ficha-info.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasRelativeInBinter"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>hasRelativeInBinter</b></span>
+                        <a href="#hasRelativeInBinter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>WritableSignal&lt;boolean&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>signal(false)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/home/formularios/datos-tcp/ficha-info/ficha-info.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modalService"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>modalService</b></span>
+                        <a href="#modalService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ModalService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/components/home/formularios/datos-tcp/ficha-info/ficha-info.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="router"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>router</b></span>
+                        <a href="#router"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(Router)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/home/formularios/datos-tcp/ficha-info/ficha-info.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, inject, signal, WritableSignal } from &#x27;@angular/core&#x27;;
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { iFichaPersonal } from &#x27;@app/models/iFichaPersonal&#x27;;
+import { iFichaForms } from &#x27;@app/models/iFichaForms&#x27;;
+import { FichaService } from &#x27;@app/services/fichaService/ficha.service&#x27;;
+import { log } from &#x27;node:console&#x27;;
+import { ModalService } from &#x27;../../../../../services/modalService/modal.service&#x27;;
+import { FeedbackComponent } from &quot;../../../../utils/modals/feedback/feedback.component&quot;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+@Component({
+  selector: &#x27;app-ficha-info&#x27;,
+  standalone: true,
+  imports: [ReactiveFormsModule, FeedbackComponent],
+  templateUrl: &#x27;./ficha-info.component.html&#x27;,
+  styleUrls: [&#x27;./ficha-info.component.scss&#x27;],
+})
+export class FichaInfoComponent {
+  @Input() ficha: iFichaPersonal[] &#x3D; [];
+  protected FichaService &#x3D; inject(FichaService);
+  protected modalService &#x3D; inject(ModalService);
+    private router &#x3D; inject(Router);
+  protected hasRelativeInBinter: WritableSignal&lt;boolean&gt; &#x3D; signal(false);
+  errorMessage: string | null &#x3D; null;
+  fichaForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.fichaForm &#x3D; this.fb.group({
+      // Primer contacto
+      nombre1: [&#x27;&#x27;, Validators.required],
+      apellidos1: [&#x27;&#x27;, Validators.required],
+      parentesco1: [&#x27;&#x27;, Validators.required],
+      direccion1: [&#x27;&#x27;, Validators.required],
+      phone11: [&#x27;&#x27;, [Validators.required, Validators.pattern(&#x27;^[0-9]+$&#x27;)]],
+      phone12: [&#x27;&#x27;, [Validators.required, Validators.pattern(&#x27;^[0-9]+$&#x27;)]],
+
+      // Segundo contacto
+      nombre2: [&#x27;&#x27;, Validators.required],
+      apellidos2: [&#x27;&#x27;, Validators.required],
+      parentesco2: [&#x27;&#x27;, Validators.required],
+      direccion2: [&#x27;&#x27;, Validators.required],
+      phone21: [&#x27;&#x27;, [Validators.required, Validators.pattern(&#x27;^[0-9]+$&#x27;)]],
+      phone22: [&#x27;&#x27;, [Validators.required, Validators.pattern(&#x27;^[0-9]+$&#x27;)]],
+
+      // Tercer contacto (extra)
+      nombreExtra: [&#x27;&#x27;],
+      apellidosExtra: [&#x27;&#x27;],
+      parentescoExtra: [&#x27;&#x27;],
+      direccionExtra: [&#x27;&#x27;],
+      company: [&#x27;&#x27;],
+      puesto: [&#x27;&#x27;],
+      phoneExtra1: [&#x27;&#x27;],
+      phoneExtra2: [&#x27;&#x27;],
+    });
+  }
+
+  /**
+   * Lifecycle hook that is called when any data-bound property of a directive changes.
+   * This method is triggered whenever Angular detects changes to the input properties
+   * of the component. It is used here to load the ficha data whenever such changes occur.
+   *
+   * @remarks
+   * Ensure that the &#x60;loadFichaData&#x60; method handles any necessary cleanup or reinitialization
+   * to properly reflect the updated state of the component.
+   */
+  ngOnChanges() {
+    this.loadFichaData();
+  }
+
+  /**
+   * Loads and maps data from the &#x60;ficha&#x60; array into the &#x60;fichaForm&#x60; form group.
+   * 
+   * This method searches for specific entries in the &#x60;ficha&#x60; array based on the &#x60;tipoGrado&#x60; property
+   * and assigns their values to corresponding fields in the form. It also sets a flag indicating
+   * whether a relative is associated with the company and toggles related validators.
+   * 
+   * The mapping is as follows:
+   * - &#x60;contact1&#x60;: Entry with &#x60;tipoGrado&#x60; equal to &#x27;1&#x27;.
+   * - &#x60;contact2&#x60;: Entry with &#x60;tipoGrado&#x60; equal to &#x27;2&#x27;.
+   * - &#x60;contact3&#x60;: Entry with &#x60;tipoGrado&#x60; equal to &#x27;3&#x27;.
+   * 
+   * If no matching entry is found for a specific &#x60;tipoGrado&#x60;, an empty object is used as a fallback.
+   * 
+   * @remarks
+   * - The method uses optional chaining and default values to ensure robustness against missing data.
+   * - The &#x60;hasRelativeInBinter&#x60; flag is set based on the presence of &#x60;company&#x60; or &#x60;puesto&#x60; in &#x60;contact3&#x60;.
+   * 
+   * @example
+   * // Example usage:
+   * this.loadFichaData();
+   */
+  loadFichaData() {
+    const contact1 &#x3D; this.ficha.find(f &#x3D;&gt; f.tipoGrado &#x3D;&#x3D;&#x3D; &#x27;1&#x27;) || {} as iFichaPersonal;
+    const contact2 &#x3D; this.ficha.find(f &#x3D;&gt; f.tipoGrado &#x3D;&#x3D;&#x3D; &#x27;2&#x27;) || {} as iFichaPersonal;
+    const contact3 &#x3D; this.ficha.find(f &#x3D;&gt; f.tipoGrado &#x3D;&#x3D;&#x3D; &#x27;3&#x27;) || {} as iFichaPersonal;
+    console.log(contact3);
+
+    this.fichaForm.patchValue({
+      nombre1: contact1.nombre || &#x27;&#x27;,
+      apellidos1: contact1.apellidos || &#x27;&#x27;,
+      parentesco1: contact1.parentesco || &#x27;&#x27;,
+      direccion1: contact1.direccion || &#x27;&#x27;,
+      phone11: contact1.telefono1 || &#x27;&#x27;,
+      phone12: contact1.telefono2 || &#x27;&#x27;,
+      nombre2: contact2.nombre || &#x27;&#x27;,
+      apellidos2: contact2.apellidos || &#x27;&#x27;,
+      parentesco2: contact2.parentesco || &#x27;&#x27;,
+      direccion2: contact2.direccion || &#x27;&#x27;,
+      phone21: contact2.telefono1 || &#x27;&#x27;,
+      phone22: contact2.telefono2 || &#x27;&#x27;,
+      nombreExtra: contact3.nombre || &#x27;&#x27;,
+      apellidosExtra: contact3.apellidos || &#x27;&#x27;,
+      parentescoExtra: contact3.parentesco || &#x27;&#x27;,
+      direccionExtra: contact3.direccion || &#x27;&#x27;,
+      company: contact3.company || &#x27;&#x27;,
+      puesto: contact3.puesto || &#x27;&#x27;,
+      phoneExtra1: contact3.telefono1 || &#x27;&#x27;,
+      phoneExtra2: contact3.telefono2 || &#x27;&#x27;,
+    });
+
+    this.hasRelativeInBinter.set(!!contact3?.company || !!contact3?.puesto);
+    this.toggleRelativeValidators();
+  }
+
+  /**
+   * Toggles the state of the &#x60;hasRelativeInBinter&#x60; property and updates the related validators.
+   * 
+   * This method inverts the current value of &#x60;hasRelativeInBinter&#x60; and then calls
+   * &#x60;toggleRelativeValidators&#x60; to ensure the form validators are updated accordingly.
+   */
+  toggleRelativeInBinter() {
+    this.hasRelativeInBinter.set(!this.hasRelativeInBinter());
+    this.toggleRelativeValidators();
+  }
+
+  /**
+   * Toggles the validators for a set of form controls in the &#x60;fichaForm&#x60; based on the presence of a relative in Binter.
+   * 
+   * - If &#x60;hasRelativeInBinter()&#x60; returns &#x60;true&#x60;, required validators are applied to the specified form controls.
+   * - If &#x60;hasRelativeInBinter()&#x60; returns &#x60;false&#x60;, all validators are cleared from the specified form controls.
+   * 
+   * After updating the validators, the method ensures that the validity state of each control is recalculated by calling &#x60;updateValueAndValidity()&#x60;.
+   * 
+   * Affected form controls:
+   * - &#x60;nombreExtra&#x60;
+   * - &#x60;apellidosExtra&#x60;
+   * - &#x60;parentescoExtra&#x60;
+   * - &#x60;direccionExtra&#x60;
+   * - &#x60;company&#x60;
+   * - &#x60;puesto&#x60;
+   * - &#x60;phoneExtra1&#x60; (also validates numeric pattern)
+   * - &#x60;phoneExtra2&#x60; (also validates numeric pattern)
+   */
+  toggleRelativeValidators() {
+    if (this.hasRelativeInBinter()) {
+      this.fichaForm.get(&#x27;nombreExtra&#x27;)?.setValidators(Validators.required);
+      this.fichaForm.get(&#x27;apellidosExtra&#x27;)?.setValidators(Validators.required);
+      this.fichaForm.get(&#x27;parentescoExtra&#x27;)?.setValidators(Validators.required);
+      this.fichaForm.get(&#x27;direccionExtra&#x27;)?.setValidators(Validators.required);
+      this.fichaForm.get(&#x27;company&#x27;)?.setValidators(Validators.required);
+      this.fichaForm.get(&#x27;puesto&#x27;)?.setValidators(Validators.required);
+      this.fichaForm.get(&#x27;phoneExtra1&#x27;)?.setValidators([Validators.required, Validators.pattern(&#x27;^[0-9]+$&#x27;)]);
+      this.fichaForm.get(&#x27;phoneExtra2&#x27;)?.setValidators([Validators.required, Validators.pattern(&#x27;^[0-9]+$&#x27;)]);
+    } else {
+      this.fichaForm.get(&#x27;nombreExtra&#x27;)?.clearValidators();
+      this.fichaForm.get(&#x27;apellidosExtra&#x27;)?.clearValidators();
+      this.fichaForm.get(&#x27;parentescoExtra&#x27;)?.clearValidators();
+      this.fichaForm.get(&#x27;direccionExtra&#x27;)?.clearValidators();
+      this.fichaForm.get(&#x27;company&#x27;)?.clearValidators();
+      this.fichaForm.get(&#x27;puesto&#x27;)?.clearValidators();
+      this.fichaForm.get(&#x27;phoneExtra1&#x27;)?.clearValidators();
+      this.fichaForm.get(&#x27;phoneExtra2&#x27;)?.clearValidators();
+
+    }
+    this.fichaForm.get(&#x27;nombreExtra&#x27;)?.updateValueAndValidity();
+    this.fichaForm.get(&#x27;apellidosExtra&#x27;)?.updateValueAndValidity();
+    this.fichaForm.get(&#x27;parentescoExtra&#x27;)?.updateValueAndValidity();
+    this.fichaForm.get(&#x27;direccionExtra&#x27;)?.updateValueAndValidity();
+    this.fichaForm.get(&#x27;company&#x27;)?.updateValueAndValidity();
+    this.fichaForm.get(&#x27;puesto&#x27;)?.updateValueAndValidity();
+    this.fichaForm.get(&#x27;phoneExtra1&#x27;)?.updateValueAndValidity();
+    this.fichaForm.get(&#x27;phoneExtra2&#x27;)?.updateValueAndValidity();
+  }
+
+  /**
+   * Handles the save operation for the ficha form.
+   * 
+   * This method validates the form, displays an error message if the form is invalid,
+   * and sends the form data to the server if valid. Upon successful submission, a success
+   * modal is displayed. If an error occurs during submission, an error modal is shown
+   * with the appropriate error message.
+   * 
+   * @remarks
+   * - The form is marked as touched if invalid to highlight validation errors.
+   * - Error messages are derived from the API response or fallback to a generic message.
+   * 
+   * @throws Will display a modal with an error message if the API call fails.
+   */
+  saveFicha() {
+    this.errorMessage &#x3D; null;
+    if (this.fichaForm.invalid) {
+      this.errorMessage &#x3D; &#x27;Por favor, rellene todos los campos obligatorios correctamente&#x27;;
+      this.fichaForm.markAllAsTouched();
+      return;
+    }
+
+    const fichaFormsData: iFichaForms &#x3D; this.fichaForm.value;
+
+    this.FichaService.saveSubject(fichaFormsData).subscribe({
+      next: (response) &#x3D;&gt; {
+        this.modalService.showSuccess(
+          &#x27;Éxito&#x27;,
+          &#x27;La información ha sido enviada con éxito&#x27;
+        );
+      },
+      error: (error) &#x3D;&gt; {
+        let errorMessage &#x3D; &#x27;Error desconocido. Por favor, intenta de nuevo.&#x27;;
+        console.log(error);
+
+        if (error &amp;&amp; error.error &amp;&amp; error.error.message) {
+          errorMessage &#x3D; error.error.message; // Si la API devuelve un campo &quot;message&quot;
+        } else if (error &amp;&amp; error.message) {
+          errorMessage &#x3D; error.message; // Si es un error genérico de HTTP
+        }
+
+        this.modalService.showError(&#x27;Error&#x27;, errorMessage);
+        this.errorMessage &#x3D; &#x27;Error al enviar la comunicación. Intenta de nuevo.&#x27;;
+      },
+    });
+  }
+
+  /**
+   * Retrieves the current URL path from the router, excluding any hash fragment (&#x60;#&#x60;).
+   * If a hash fragment is present, it extracts and returns the portion of the URL after &#x60;#/&#x60;.
+   * Otherwise, it returns the full URL as is.
+   *
+   * @returns The extracted URL path or the full URL if no hash fragment is found.
+   */
+  getUrl(): string{
+    const fullUrl &#x3D; this.router.url;
+    const pathIndex &#x3D; fullUrl.indexOf(&#x27;#/&#x27;);
+    if (pathIndex !&#x3D;&#x3D; -1) {
+      return fullUrl.substring(pathIndex + 2);
+    }
+    return fullUrl;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;contact&quot;&gt;
+  @for (index of [0, 1]; track $index) {
+    @if (index &#x3D;&#x3D;&#x3D; 0) {
+      &lt;h2 class&#x3D;&quot;title&quot;&gt;First contact person / Primera persona de contacto&lt;/h2&gt;
+    }
+    @if (index &#x3D;&#x3D;&#x3D; 1) {
+      &lt;h2 class&#x3D;&quot;title&quot;&gt;Second contact person / Segunda persona de contacto&lt;/h2&gt;
+    }
+    &lt;hr /&gt;
+    &lt;form [formGroup]&#x3D;&quot;fichaForm&quot;&gt;
+      &lt;div class&#x3D;&quot;contact-info contact-fields&quot;&gt;
+        &lt;div class&#x3D;&quot;input-group&quot;&gt;
+          &lt;input type&#x3D;&quot;text&quot; [id]&#x3D;&quot;&#x27;name&#x27; + (index + 1)&quot; [formControlName]&#x3D;&quot;&#x27;nombre&#x27; + (index + 1)&quot; placeholder&#x3D;&quot; &quot;&gt;
+          &lt;label [for]&#x3D;&quot;&#x27;name&#x27; + (index + 1)&quot;&gt;Name / Nombre&lt;/label&gt;
+          @if (fichaForm.get(&#x27;nombre&#x27; + (index + 1))?.touched &amp;&amp; fichaForm.get(&#x27;nombre&#x27; + (index + 1))?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+          }
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;input-group&quot;&gt;
+          &lt;input type&#x3D;&quot;text&quot; [id]&#x3D;&quot;&#x27;surnames&#x27; + (index + 1)&quot; [formControlName]&#x3D;&quot;&#x27;apellidos&#x27; + (index + 1)&quot;  placeholder&#x3D;&quot; &quot;&gt;
+          &lt;label [for]&#x3D;&quot;&#x27;surnames&#x27; + (index + 1)&quot;&gt;Surnames / Apellidos&lt;/label&gt;
+          @if (fichaForm.get(&#x27;apellidos&#x27; + (index + 1))?.touched &amp;&amp; fichaForm.get(&#x27;apellidos&#x27; + (index + 1))?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+          }
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;contact-info contact-fields&quot;&gt;
+        &lt;div class&#x3D;&quot;input-group&quot;&gt;
+          &lt;input type&#x3D;&quot;text&quot; [id]&#x3D;&quot;&#x27;relationship&#x27; + (index + 1)&quot; [formControlName]&#x3D;&quot;&#x27;parentesco&#x27; + (index + 1)&quot;  placeholder&#x3D;&quot; &quot;&gt;
+          &lt;label [for]&#x3D;&quot;&#x27;relationship&#x27; + (index + 1)&quot;&gt;Relationship / Parentesco&lt;/label&gt;
+          @if (fichaForm.get(&#x27;parentesco&#x27; + (index + 1))?.touched &amp;&amp; fichaForm.get(&#x27;parentesco&#x27; + (index + 1))?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+          }
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;input-group&quot;&gt;
+          &lt;input type&#x3D;&quot;text&quot; [id]&#x3D;&quot;&#x27;address&#x27; + (index + 1)&quot; [formControlName]&#x3D;&quot;&#x27;direccion&#x27; + (index + 1)&quot;  placeholder&#x3D;&quot; &quot;&gt;
+          &lt;label [for]&#x3D;&quot;&#x27;address&#x27; + (index + 1)&quot;&gt;Address / Dirección&lt;/label&gt;
+          @if (fichaForm.get(&#x27;direccion&#x27; + (index + 1))?.touched &amp;&amp; fichaForm.get(&#x27;direccion&#x27; + (index + 1))?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+          }
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;contact-info contact-fields&quot;&gt;
+        &lt;div class&#x3D;&quot;input-group&quot;&gt;
+          &lt;input type&#x3D;&quot;number&quot; [id]&#x3D;&quot;&#x27;phone1&#x27; + (index + 1)&quot; [formControlName]&#x3D;&quot;&#x27;phone&#x27; + (index + 1) + &#x27;1&#x27;&quot;  placeholder&#x3D;&quot; &quot;&gt;
+          &lt;label [for]&#x3D;&quot;&#x27;phone1&#x27; + (index + 1)&quot;&gt;Phone 1 / Teléfono 1&lt;/label&gt;
+          @if (fichaForm.get(&#x27;phone&#x27; + (index + 1) + &#x27;1&#x27;)?.touched &amp;&amp; fichaForm.get(&#x27;phone&#x27; + (index + 1) + &#x27;1&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Teléfono obligatorio y solo números&lt;/div&gt;
+          }
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;input-group&quot;&gt;
+          &lt;input type&#x3D;&quot;number&quot; [id]&#x3D;&quot;&#x27;phone2&#x27; + (index + 1)&quot; [formControlName]&#x3D;&quot;&#x27;phone&#x27; + (index + 1) + &#x27;2&#x27;&quot;  placeholder&#x3D;&quot; &quot;&gt;
+          &lt;label [for]&#x3D;&quot;&#x27;phone2&#x27; + (index + 1)&quot;&gt;Phone 2 / Teléfono 2&lt;/label&gt;
+          @if (fichaForm.get(&#x27;phone&#x27; + (index + 1) + &#x27;2&#x27;)?.touched &amp;&amp; fichaForm.get(&#x27;phone&#x27; + (index + 1) + &#x27;2&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Teléfono obligatorio y solo números&lt;/div&gt;
+          }
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  }
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;checkbox-container&quot;&gt;
+  &lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;binter&quot; [checked]&#x3D;&quot;hasRelativeInBinter()&quot; (change)&#x3D;&quot;toggleRelativeInBinter()&quot; /&gt;
+  &lt;label for&#x3D;&quot;binter&quot;&gt;
+    Do you have any relative in the Binter System? / ¿Tiene un familiar en el sistema Binter?
+  &lt;/label&gt;
+&lt;/div&gt;
+
+@if (hasRelativeInBinter()) {
+  &lt;div class&#x3D;&quot;contact-section&quot;&gt;
+    &lt;h3&gt;Personal Data of Employee&#x27;s Relative in Binter System&lt;/h3&gt;
+    &lt;hr /&gt;
+    &lt;form [formGroup]&#x3D;&quot;fichaForm&quot;&gt;
+      &lt;div class&#x3D;&quot;contact-fields&quot;&gt;
+        &lt;div class&#x3D;&quot;input-group&quot;&gt;
+          &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;name-relative&quot; formControlName&#x3D;&quot;nombreExtra&quot;  placeholder&#x3D;&quot; &quot;&gt;
+          &lt;label for&#x3D;&quot;name-relative&quot;&gt;Name / Nombre&lt;/label&gt;
+          @if (fichaForm.get(&#x27;nombreExtra&#x27;)?.touched &amp;&amp; fichaForm.get(&#x27;nombreExtra&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+          }
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;input-group&quot;&gt;
+          &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;surnames-relative&quot; formControlName&#x3D;&quot;apellidosExtra&quot;  placeholder&#x3D;&quot; &quot;&gt;
+          &lt;label for&#x3D;&quot;surnames-relative&quot;&gt;Surnames / Apellidos&lt;/label&gt;
+          @if (fichaForm.get(&#x27;apellidosExtra&#x27;)?.touched &amp;&amp; fichaForm.get(&#x27;apellidosExtra&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+          }
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;contact-fields&quot;&gt;
+        &lt;div class&#x3D;&quot;input-group&quot;&gt;
+          &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;relationship-relative&quot; formControlName&#x3D;&quot;parentescoExtra&quot;  placeholder&#x3D;&quot; &quot;&gt;
+          &lt;label for&#x3D;&quot;relationship-relative&quot;&gt;Relationship / Parentesco&lt;/label&gt;
+          @if (fichaForm.get(&#x27;parentescoExtra&#x27;)?.touched &amp;&amp; fichaForm.get(&#x27;parentescoExtra&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+          }
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;input-group&quot;&gt;
+          &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;address-relative&quot; formControlName&#x3D;&quot;direccionExtra&quot;  placeholder&#x3D;&quot; &quot;&gt;
+          &lt;label for&#x3D;&quot;address-relative&quot;&gt;Address / Dirección&lt;/label&gt;
+          @if (fichaForm.get(&#x27;direccionExtra&#x27;)?.touched &amp;&amp; fichaForm.get(&#x27;direccionExtra&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+          }
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;contact-fields&quot;&gt;
+        &lt;div class&#x3D;&quot;input-group&quot;&gt;
+          &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;company-relative&quot; formControlName&#x3D;&quot;company&quot;  placeholder&#x3D;&quot; &quot;&gt;
+          &lt;label for&#x3D;&quot;company-relative&quot;&gt;Company Name / Compañía&lt;/label&gt;
+          @if (fichaForm.get(&#x27;company&#x27;)?.touched &amp;&amp; fichaForm.get(&#x27;company&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+          }
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;input-group&quot;&gt;
+          &lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;position-relative&quot; formControlName&#x3D;&quot;puesto&quot;  placeholder&#x3D;&quot; &quot;&gt;
+          &lt;label for&#x3D;&quot;position-relative&quot;&gt;Position / Puesto&lt;/label&gt;
+          @if (fichaForm.get(&#x27;puesto&#x27;)?.touched &amp;&amp; fichaForm.get(&#x27;puesto&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+          }
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;contact-fields&quot;&gt;
+        &lt;div class&#x3D;&quot;input-group&quot;&gt;
+          &lt;input type&#x3D;&quot;number&quot; id&#x3D;&quot;phone1-relative&quot; formControlName&#x3D;&quot;phoneExtra1&quot; placeholder&#x3D;&quot; &quot;&gt;
+          &lt;label for&#x3D;&quot;phone1-relative&quot;&gt;Phone 1 / Teléfono 1&lt;/label&gt;
+          @if (fichaForm.get(&#x27;phoneExtra1&#x27;)?.touched &amp;&amp; fichaForm.get(&#x27;phoneExtra1&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Teléfono obligatorio y solo números&lt;/div&gt;
+          }
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;input-group&quot;&gt;
+          &lt;input type&#x3D;&quot;number&quot; id&#x3D;&quot;phone2-relative&quot; formControlName&#x3D;&quot;phoneExtra2&quot; placeholder&#x3D;&quot; &quot;&gt;
+          &lt;label for&#x3D;&quot;phone2-relative&quot;&gt;Phone 2 / Teléfono 2&lt;/label&gt;
+          @if (fichaForm.get(&#x27;phoneExtra2&#x27;)?.touched &amp;&amp; fichaForm.get(&#x27;phoneExtra2&#x27;)?.invalid) {
+            &lt;div class&#x3D;&quot;error&quot;&gt;Teléfono obligatorio y solo números&lt;/div&gt;
+          }
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+}
+
+&lt;div class&#x3D;&quot;sendBtnDiv&quot;&gt;
+  @if (errorMessage) {
+    &lt;p class&#x3D;&quot;error-message&quot; style&#x3D;&quot;color: red;&quot;&gt;{{ errorMessage }}&lt;/p&gt;
+  }
+  &lt;button class&#x3D;&quot;send-button&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;saveFicha()&quot;&gt;Send / Enviar&lt;/button&gt;
+&lt;/div&gt;
+&lt;app-feedback [redirect]&#x3D;&quot;getUrl()&quot;&gt;&lt;/app-feedback&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./ficha-info.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@use &quot;sass:color&quot;;
+@use &quot;sass:map&quot;;
+@use &quot;../../../../../../styles&quot; as *;
+@use &quot;mixins&quot; as *;
+
+$gradient-color: map.get($custom-palette, 50);
+
+// Validación del color
+@if not $gradient-color {
+  @error &quot;$gradient-color no es un color válido. Revisa la variable.&quot;;
+}
+
+.contact {
+  margin-bottom: 30px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  color: map.get($custom-palette, 50);
+}
+
+// Estilos de los inputs
+.input-group {
+  margin: 5px 15px;
+  width: 100%;
+  @include groupInput(map.get($custom-palette, 50), red);
+}
+
+// Botón de envío
+.send-button {
+  @include boton(map.get($custom-palette, 50), white);
+}
+
+.sendBtnDiv {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: auto;
+  padding: 35px;
+}
+
+h3,
+h2 {
+  display: flex;
+  align-items: center;
+  color: map.get($custom-palette, 50);
+}
+
+.contact-fields {
+  display: flex;
+  justify-content: left;
+  height: fit-content
+}
+
+hr {
+  @include hr(map.get($custom-palette, 50));
+  margin-bottom: 50px;
+}
+
+.error {
+  color: red;
+  margin: 5px;
+  font-size: small;
+}
+
+.checkbox-container {
+  margin-bottom: 25px;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="contact">  @for (index of [0, 1]; track $index) {    @if (index === 0) {      <h2 class="title">First contact person / Primera persona de contacto</h2>    }    @if (index === 1) {      <h2 class="title">Second contact person / Segunda persona de contacto</h2>    }    <hr />    <form [formGroup]="fichaForm">      <div class="contact-info contact-fields">        <div class="input-group">          <input type="text" [id]="\'name\' + (index + 1)" [formControlName]="\'nombre\' + (index + 1)" placeholder=" ">          <label [for]="\'name\' + (index + 1)">Name / Nombre</label>          @if (fichaForm.get(\'nombre\' + (index + 1))?.touched && fichaForm.get(\'nombre\' + (index + 1))?.invalid) {            <div class="error">Este campo es obligatorio</div>          }        </div>        <div class="input-group">          <input type="text" [id]="\'surnames\' + (index + 1)" [formControlName]="\'apellidos\' + (index + 1)"  placeholder=" ">          <label [for]="\'surnames\' + (index + 1)">Surnames / Apellidos</label>          @if (fichaForm.get(\'apellidos\' + (index + 1))?.touched && fichaForm.get(\'apellidos\' + (index + 1))?.invalid) {            <div class="error">Este campo es obligatorio</div>          }        </div>      </div>      <div class="contact-info contact-fields">        <div class="input-group">          <input type="text" [id]="\'relationship\' + (index + 1)" [formControlName]="\'parentesco\' + (index + 1)"  placeholder=" ">          <label [for]="\'relationship\' + (index + 1)">Relationship / Parentesco</label>          @if (fichaForm.get(\'parentesco\' + (index + 1))?.touched && fichaForm.get(\'parentesco\' + (index + 1))?.invalid) {            <div class="error">Este campo es obligatorio</div>          }        </div>        <div class="input-group">          <input type="text" [id]="\'address\' + (index + 1)" [formControlName]="\'direccion\' + (index + 1)"  placeholder=" ">          <label [for]="\'address\' + (index + 1)">Address / Dirección</label>          @if (fichaForm.get(\'direccion\' + (index + 1))?.touched && fichaForm.get(\'direccion\' + (index + 1))?.invalid) {            <div class="error">Este campo es obligatorio</div>          }        </div>      </div>      <div class="contact-info contact-fields">        <div class="input-group">          <input type="number" [id]="\'phone1\' + (index + 1)" [formControlName]="\'phone\' + (index + 1) + \'1\'"  placeholder=" ">          <label [for]="\'phone1\' + (index + 1)">Phone 1 / Teléfono 1</label>          @if (fichaForm.get(\'phone\' + (index + 1) + \'1\')?.touched && fichaForm.get(\'phone\' + (index + 1) + \'1\')?.invalid) {            <div class="error">Teléfono obligatorio y solo números</div>          }        </div>        <div class="input-group">          <input type="number" [id]="\'phone2\' + (index + 1)" [formControlName]="\'phone\' + (index + 1) + \'2\'"  placeholder=" ">          <label [for]="\'phone2\' + (index + 1)">Phone 2 / Teléfono 2</label>          @if (fichaForm.get(\'phone\' + (index + 1) + \'2\')?.touched && fichaForm.get(\'phone\' + (index + 1) + \'2\')?.invalid) {            <div class="error">Teléfono obligatorio y solo números</div>          }        </div>      </div>    </form>  }</div><div class="checkbox-container">  <input type="checkbox" id="binter" [checked]="hasRelativeInBinter()" (change)="toggleRelativeInBinter()" />  <label for="binter">    Do you have any relative in the Binter System? / ¿Tiene un familiar en el sistema Binter?  </label></div>@if (hasRelativeInBinter()) {  <div class="contact-section">    <h3>Personal Data of Employee\'s Relative in Binter System</h3>    <hr />    <form [formGroup]="fichaForm">      <div class="contact-fields">        <div class="input-group">          <input type="text" id="name-relative" formControlName="nombreExtra"  placeholder=" ">          <label for="name-relative">Name / Nombre</label>          @if (fichaForm.get(\'nombreExtra\')?.touched && fichaForm.get(\'nombreExtra\')?.invalid) {            <div class="error">Este campo es obligatorio</div>          }        </div>        <div class="input-group">          <input type="text" id="surnames-relative" formControlName="apellidosExtra"  placeholder=" ">          <label for="surnames-relative">Surnames / Apellidos</label>          @if (fichaForm.get(\'apellidosExtra\')?.touched && fichaForm.get(\'apellidosExtra\')?.invalid) {            <div class="error">Este campo es obligatorio</div>          }        </div>      </div>      <div class="contact-fields">        <div class="input-group">          <input type="text" id="relationship-relative" formControlName="parentescoExtra"  placeholder=" ">          <label for="relationship-relative">Relationship / Parentesco</label>          @if (fichaForm.get(\'parentescoExtra\')?.touched && fichaForm.get(\'parentescoExtra\')?.invalid) {            <div class="error">Este campo es obligatorio</div>          }        </div>        <div class="input-group">          <input type="text" id="address-relative" formControlName="direccionExtra"  placeholder=" ">          <label for="address-relative">Address / Dirección</label>          @if (fichaForm.get(\'direccionExtra\')?.touched && fichaForm.get(\'direccionExtra\')?.invalid) {            <div class="error">Este campo es obligatorio</div>          }        </div>      </div>      <div class="contact-fields">        <div class="input-group">          <input type="text" id="company-relative" formControlName="company"  placeholder=" ">          <label for="company-relative">Company Name / Compañía</label>          @if (fichaForm.get(\'company\')?.touched && fichaForm.get(\'company\')?.invalid) {            <div class="error">Este campo es obligatorio</div>          }        </div>        <div class="input-group">          <input type="text" id="position-relative" formControlName="puesto"  placeholder=" ">          <label for="position-relative">Position / Puesto</label>          @if (fichaForm.get(\'puesto\')?.touched && fichaForm.get(\'puesto\')?.invalid) {            <div class="error">Este campo es obligatorio</div>          }        </div>      </div>      <div class="contact-fields">        <div class="input-group">          <input type="number" id="phone1-relative" formControlName="phoneExtra1" placeholder=" ">          <label for="phone1-relative">Phone 1 / Teléfono 1</label>          @if (fichaForm.get(\'phoneExtra1\')?.touched && fichaForm.get(\'phoneExtra1\')?.invalid) {            <div class="error">Teléfono obligatorio y solo números</div>          }        </div>        <div class="input-group">          <input type="number" id="phone2-relative" formControlName="phoneExtra2" placeholder=" ">          <label for="phone2-relative">Phone 2 / Teléfono 2</label>          @if (fichaForm.get(\'phoneExtra2\')?.touched && fichaForm.get(\'phoneExtra2\')?.invalid) {            <div class="error">Teléfono obligatorio y solo números</div>          }        </div>      </div>    </form>  </div>}<div class="sendBtnDiv">  @if (errorMessage) {    <p class="error-message" style="color: red;">{{ errorMessage }}</p>  }  <button class="send-button" type="button" (click)="saveFicha()">Send / Enviar</button></div><app-feedback [redirect]="getUrl()"></app-feedback></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AvisoLegalComponent', 'selector': 'app-aviso-legal'},{'name': 'BackOfficeComponent', 'selector': 'app-back-office'},{'name': 'ComunicacionComponent', 'selector': 'app-comunicacion'},{'name': 'ComunicacionDirectaComponent', 'selector': 'app-comunicacion-directa'},{'name': 'DatosTCPComponent', 'selector': 'app-datos-tcp'},{'name': 'ErrorComponent', 'selector': ''},{'name': 'FeedbackComponent', 'selector': 'app-feedback'},{'name': 'FichaComponent', 'selector': 'app-ficha'},{'name': 'FichaInfoComponent', 'selector': 'app-ficha-info'},{'name': 'FichaPlanEmergenciaComponent', 'selector': 'app-ficha-plan-emergencia'},{'name': 'FichaUserInfoComponent', 'selector': 'app-ficha-user-info'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormulariosComponent', 'selector': 'app-formularios'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LinkerComponent', 'selector': 'app-linker'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NominaComponent', 'selector': 'app-nomina'},{'name': 'NominasVaciasComponent', 'selector': 'app-nominas-vacias'},{'name': 'PeticionVacacionesComponent', 'selector': 'app-peticion-vacaciones'},{'name': 'ReclamacionNominaComponent', 'selector': 'app-reclamacion-nomina'},{'name': 'RespuestasComponent', 'selector': 'app-respuestas'},{'name': 'SendRespuestaComponent', 'selector': 'app-send-respuesta'},{'name': 'SolicitudComponent', 'selector': 'app-solicitud'},{'name': 'TableComponent', 'selector': 'app-table'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'VacacionesComponent', 'selector': 'app-vacaciones'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'FichaInfoComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'FichaInfoComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

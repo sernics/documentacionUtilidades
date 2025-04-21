@@ -1,0 +1,1760 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>login documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">login documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  DatosTCPComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-datos-tcp</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                                <code><a href="../components/FichaInfoComponent.html" target="_self" >FichaInfoComponent</a></code>
+                            <code>ReactiveFormsModule</code>
+                            <code>MatAutocompleteModule</code>
+                            <code>MatInputModule</code>
+                            <code>MatFormFieldModule</code>
+                            <code>AsyncPipe</code>
+                                <code><a href="../components/NominasVaciasComponent.html" target="_self" >NominasVaciasComponent</a></code>
+                                <code><a href="../components/FichaUserInfoComponent.html" target="_self" >FichaUserInfoComponent</a></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./datos-tcp.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./datos-tcp.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#datosTcpService" >datosTcpService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#fichas" >fichas</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#fichasVacias" >fichasVacias</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#filteredOptions" >filteredOptions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#isLoadingEmpty" >isLoadingEmpty</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#nominas" >nominas</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#roleService" >roleService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#searchQuery" >searchQuery</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#selectedEmployee" >selectedEmployee</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#showContent" >showContent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#showTableEmpty" >showTableEmpty</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_filter" >_filter</a>
+                            </li>
+                            <li>
+                                <a href="#displayFn" >displayFn</a>
+                            </li>
+                            <li>
+                                <a href="#getFichas" >getFichas</a>
+                            </li>
+                            <li>
+                                <a href="#getFichasVacias" >getFichasVacias</a>
+                            </li>
+                            <li>
+                                <a href="#getUserInfo" >getUserInfo</a>
+                            </li>
+                            <li>
+                                <a href="#isAdmin" >isAdmin</a>
+                            </li>
+                            <li>
+                                <a href="#onOptionSelected" >onOptionSelected</a>
+                            </li>
+                            <li>
+                                <a href="#searchEmployee" >searchEmployee</a>
+                            </li>
+                            <li>
+                                <a href="#searchEmpty" >searchEmpty</a>
+                            </li>
+                            <li>
+                                <a href="#setupAutocomplete" >setupAutocomplete</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:48</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_filter"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>_filter</b></span>
+                        <a href="#_filter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>_filter(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="86"
+                                    class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:86</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Filters the list of <code>iNomina</code> objects based on the provided string value.
+The filter is case-insensitive and checks if the <code>numeroNomina</code> or <code>nombreCompleto</code>
+properties of each <code>iNomina</code> object include the given value.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>value</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The string value to filter the <code>iNomina</code> objects by.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/iNomina.html" target="_self" >iNomina[]</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>An array of <code>iNomina</code> objects that match the filter criteria.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayFn"></a>
+                    <span class="name">
+                        <span ><b>displayFn</b></span>
+                        <a href="#displayFn"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>displayFn(nomina: <a href="../interfaces/iNomina.html" target="_self">iNomina</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="230"
+                                    class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:230</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Formats and returns a string representation of a <code>iNomina</code> object.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">     if `nomina` is provided, otherwise an empty string.</code></pre></div></div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>nomina</td>
+                                            <td>
+                                                            <code><a href="../interfaces/iNomina.html" target="_self" >iNomina</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The <code>iNomina</code> object containing employee details.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A formatted string in the format &quot;nombreCompleto (numeroNomina)&quot; 
+if <code>nomina</code> is provided, otherwise an empty string.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFichas"></a>
+                    <span class="name">
+                        <span ><b>getFichas</b></span>
+                        <a href="#getFichas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFichas()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="176"
+                                    class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:176</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Retrieves the list of personal records (fichas).</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/iFichaPersonal.html" target="_self" >iFichaPersonal[]</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>An array of personal records.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFichasVacias"></a>
+                    <span class="name">
+                        <span ><b>getFichasVacias</b></span>
+                        <a href="#getFichasVacias"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFichasVacias()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="219"
+                                    class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:219</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Retrieves an array of empty &quot;fichas&quot; (records).</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>string[]</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>An array of strings representing the empty fichas.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUserInfo"></a>
+                    <span class="name">
+                        <span ><b>getUserInfo</b></span>
+                        <a href="#getUserInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUserInfo()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="191"
+                                    class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:191</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Retrieves user information by mapping data from the first element of the <code>fichas</code> array.</p>
+<p>email, employee number, username, and other details.</p>
+<ul>
+<li>The method assumes that the <code>fichas</code> array contains at least one element.</li>
+<li>Default values are used for some fields, such as <code>authorities</code>, <code>company</code>, <code>name</code>, and <code>sn</code>.</li>
+<li>The <code>authorities</code> field is set with a default role of <code>Roles.USER</code>.</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/iUser.html" target="_self" >iUser</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>An object containing user information, including authorities, full name,
+email, employee number, username, and other details.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isAdmin"></a>
+                    <span class="name">
+                        <span ><b>isAdmin</b></span>
+                        <a href="#isAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isAdmin()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="167"
+                                    class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:167</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Determines if the current user has administrative privileges.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p><code>true</code> if the user is an admin, otherwise <code>false</code>.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onOptionSelected"></a>
+                    <span class="name">
+                        <span ><b>onOptionSelected</b></span>
+                        <a href="#onOptionSelected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onOptionSelected(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="100"
+                                    class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:100</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles the selection of an option from a dropdown or autocomplete component.
+Updates the <code>selectedEmployee</code> property with the value of the selected option.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The event object containing the selected option&#39;s details.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchEmployee"></a>
+                    <span class="name">
+                        <span ><b>searchEmployee</b></span>
+                        <a href="#searchEmployee"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>searchEmployee()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="118"
+                                    class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:118</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Searches for an employee&#39;s record based on the selected employee.</p>
+<p>If an employee is selected, it retrieves the employee&#39;s record using the <code>datosTcpService</code>
+and updates the component&#39;s state to display the retrieved data.
+If no employee is selected, it alerts the user to select an employee first.</p>
+<ul>
+<li>The method relies on <code>this.selectedEmployee</code> to determine the employee to search for.</li>
+<li>The retrieved records are stored in <code>this.fichas</code>.</li>
+<li>The visibility of content and empty table messages is controlled by <code>this.showContent</code> and <code>this.showTableEmpty</code>.</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchEmpty"></a>
+                    <span class="name">
+                        <span ><b>searchEmpty</b></span>
+                        <a href="#searchEmpty"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>searchEmpty()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="144"
+                                    class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:144</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Initiates a search for empty payroll records by calling the <code>getEmptyNominas</code> service method.</p>
+<ul>
+<li>Displays a loading indicator while the search is in progress.</li>
+<li>Hides the table and content until the search is complete.</li>
+<li>Updates the component state with the retrieved data or logs an error if the request fails.</li>
+</ul>
+<p>This method handles both the success and error scenarios:</p>
+<ul>
+<li>On success: Updates the <code>fichasVacias</code> property with the retrieved data and displays the table.</li>
+<li>On error: Logs the error to the console and ensures the loading indicator is turned off.</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setupAutocomplete"></a>
+                    <span class="name">
+                        <span ><b>setupAutocomplete</b></span>
+                        <a href="#setupAutocomplete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setupAutocomplete()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:71</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Initializes the autocomplete functionality by setting up a stream of filtered options
+based on the user&#39;s input in the <code>searchQuery</code> form control. The filtered options
+are updated dynamically as the user types.</p>
+<p>This method uses RxJS operators to listen for value changes in the <code>searchQuery</code> form control,
+starting with an empty string, and applies a filtering function to generate the list of
+suggestions.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-html">// Assuming `searchQuery` is a FormControl, this will filter options as the user types:
+this.setupAutocomplete();</code></pre></div></div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="datosTcpService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>datosTcpService</b></span>
+                        <a href="#datosTcpService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(DatosTcpService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fichas"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>fichas</b></span>
+                        <a href="#fichas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/iFichaPersonal.html" target="_self" >iFichaPersonal[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fichasVacias"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>fichasVacias</b></span>
+                        <a href="#fichasVacias"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filteredOptions"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>filteredOptions</b></span>
+                        <a href="#filteredOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/iNomina.html" target="_self" >Observable&lt;iNomina[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoadingEmpty"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>isLoadingEmpty</b></span>
+                        <a href="#isLoadingEmpty"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nominas"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>nominas</b></span>
+                        <a href="#nominas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/iNomina.html" target="_self" >iNomina[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="roleService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>roleService</b></span>
+                        <a href="#roleService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(RoleService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchQuery"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>searchQuery</b></span>
+                        <a href="#searchQuery"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl(&#x27;&#x27;)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedEmployee"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>selectedEmployee</b></span>
+                        <a href="#selectedEmployee"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showContent"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>showContent</b></span>
+                        <a href="#showContent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showTableEmpty"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>showTableEmpty</b></span>
+                        <a href="#showTableEmpty"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/components/home/formularios/datos-tcp/datos-tcp.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, inject } from &#x27;@angular/core&#x27;;
+import { UserInfoComponent } from &#x27;../user-info/user-info.component&#x27;;
+import { FormsModule, ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
+import { DatosTcpService } from &#x27;@app/services/datosTcpService/datos-tcp.service&#x27;;
+import { RoleService } from &#x27;@app/services/roleService/role.service&#x27;;
+import { iNomina } from &#x27;@app/models/iNomina&#x27;;
+import { iFichaPersonal } from &#x27;@app/models/iFichaPersonal&#x27;;
+import { FichaInfoComponent } from &#x27;./ficha-info/ficha-info.component&#x27;;
+import { MatAutocompleteModule } from &#x27;@angular/material/autocomplete&#x27;;
+import { MatInputModule } from &#x27;@angular/material/input&#x27;;
+import { MatFormFieldModule } from &#x27;@angular/material/form-field&#x27;;
+import { AsyncPipe } from &#x27;@angular/common&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { map, startWith } from &#x27;rxjs/operators&#x27;;
+import { FormControl } from &#x27;@angular/forms&#x27;;
+import { NominasVaciasComponent } from &#x27;./nominas-vacias/nominas-vacias.component&#x27;;
+import { FichaUserInfoComponent } from &#x27;./ficha-user-info/ficha-user-info.component&#x27;;
+import { iUser } from &#x27;@app/models/iUser&#x27;;
+import { Roles } from &#x27;@app/enums/roles&#x27;;
+
+@Component({
+  selector: &#x27;app-datos-tcp&#x27;,
+  standalone: true,
+  imports: [
+    FichaInfoComponent,
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    MatFormFieldModule,
+    AsyncPipe,
+    NominasVaciasComponent,
+    FichaUserInfoComponent
+  ],
+  templateUrl: &#x27;./datos-tcp.component.html&#x27;,
+  styleUrls: [&#x27;./datos-tcp.component.scss&#x27;],
+})
+export class DatosTCPComponent {
+  private datosTcpService &#x3D; inject(DatosTcpService);
+  private roleService &#x3D; inject(RoleService);
+  protected searchQuery &#x3D; new FormControl(&#x27;&#x27;);
+  protected selectedEmployee: string &#x3D; &#x27;&#x27;;
+  protected showContent: boolean &#x3D; false;
+  protected showTableEmpty: boolean &#x3D; false;
+  protected isLoadingEmpty: boolean &#x3D; false;
+  protected nominas: iNomina[] &#x3D; [];
+  protected fichas: iFichaPersonal[] &#x3D; [];
+  protected fichasVacias : string[]&#x3D; [];
+  protected filteredOptions!: Observable&lt;iNomina[]&gt;;
+
+  constructor() {
+    this.datosTcpService.getNominas().subscribe((nominas) &#x3D;&gt; {
+      this.nominas &#x3D; nominas;
+      this.setupAutocomplete();
+    });
+  }
+
+  /**
+   * Initializes the autocomplete functionality by setting up a stream of filtered options
+   * based on the user&#x27;s input in the &#x60;searchQuery&#x60; form control. The filtered options
+   * are updated dynamically as the user types.
+   *
+   * @remarks
+   * This method uses RxJS operators to listen for value changes in the &#x60;searchQuery&#x60; form control,
+   * starting with an empty string, and applies a filtering function to generate the list of
+   * suggestions.
+   *
+   * @example
+   * // Assuming &#x60;searchQuery&#x60; is a FormControl, this will filter options as the user types:
+   * this.setupAutocomplete();
+   */
+  setupAutocomplete() {
+    this.filteredOptions &#x3D; this.searchQuery.valueChanges.pipe(
+      startWith(&#x27;&#x27;),
+      map(value &#x3D;&gt; this._filter(value || &#x27;&#x27;))
+    );
+  }
+
+  /**
+   * Filters the list of &#x60;iNomina&#x60; objects based on the provided string value.
+   * The filter is case-insensitive and checks if the &#x60;numeroNomina&#x60; or &#x60;nombreCompleto&#x60;
+   * properties of each &#x60;iNomina&#x60; object include the given value.
+   *
+   * @param value - The string value to filter the &#x60;iNomina&#x60; objects by.
+   * @returns An array of &#x60;iNomina&#x60; objects that match the filter criteria.
+   */
+  private _filter(value: string): iNomina[] {
+    const filterValue &#x3D; value.toLowerCase();
+    return this.nominas.filter(item &#x3D;&gt;
+      item.numeroNomina.toLowerCase().includes(filterValue) ||
+      item.nombreCompleto.toLowerCase().includes(filterValue)
+    );
+  }
+
+  /**
+   * Handles the selection of an option from a dropdown or autocomplete component.
+   * Updates the &#x60;selectedEmployee&#x60; property with the value of the selected option.
+   *
+   * @param event - The event object containing the selected option&#x27;s details.
+   */
+  onOptionSelected(event: any) {
+    this.selectedEmployee &#x3D; event.option.value;
+  }
+
+  /**
+   * Searches for an employee&#x27;s record based on the selected employee.
+   * 
+   * If an employee is selected, it retrieves the employee&#x27;s record using the &#x60;datosTcpService&#x60;
+   * and updates the component&#x27;s state to display the retrieved data.
+   * If no employee is selected, it alerts the user to select an employee first.
+   * 
+   * @remarks
+   * - The method relies on &#x60;this.selectedEmployee&#x60; to determine the employee to search for.
+   * - The retrieved records are stored in &#x60;this.fichas&#x60;.
+   * - The visibility of content and empty table messages is controlled by &#x60;this.showContent&#x60; and &#x60;this.showTableEmpty&#x60;.
+   * 
+   * @throws Will display an alert if no employee is selected.
+   */
+  searchEmployee() {
+    if (this.selectedEmployee) {
+      this.datosTcpService
+        .getFichaEmpleado(this.selectedEmployee)
+        .subscribe((fichas) &#x3D;&gt; {
+          this.fichas &#x3D; fichas;
+          this.showContent &#x3D; true;
+          this.showTableEmpty &#x3D; false;
+        });
+    } else {
+      alert(&#x27;Por favor, selecciona un empleado antes de buscar.&#x27;);
+    }
+  }
+
+  /**
+   * Initiates a search for empty payroll records by calling the &#x60;getEmptyNominas&#x60; service method.
+   * 
+   * - Displays a loading indicator while the search is in progress.
+   * - Hides the table and content until the search is complete.
+   * - Updates the component state with the retrieved data or logs an error if the request fails.
+   * 
+   * @remarks
+   * This method handles both the success and error scenarios:
+   * - On success: Updates the &#x60;fichasVacias&#x60; property with the retrieved data and displays the table.
+   * - On error: Logs the error to the console and ensures the loading indicator is turned off.
+   */
+  searchEmpty() {
+    this.isLoadingEmpty &#x3D; true; // Activamos el loading
+    this.showTableEmpty &#x3D; false;
+    this.showContent &#x3D; false;
+    
+    this.datosTcpService.getEmptyNominas().subscribe({
+      next: (fichasVacias) &#x3D;&gt; {
+        this.fichasVacias &#x3D; fichasVacias;
+        this.showTableEmpty &#x3D; true;
+        this.isLoadingEmpty &#x3D; false; // Desactivamos el loading
+      },
+      error: (error) &#x3D;&gt; {
+        console.error(&#x27;Error al cargar nóminas vacías:&#x27;, error);
+        this.isLoadingEmpty &#x3D; false; // Desactivamos el loading incluso si hay error
+      }
+    });
+  }
+
+  /**
+   * Determines if the current user has administrative privileges.
+   *
+   * @returns {boolean} &#x60;true&#x60; if the user is an admin, otherwise &#x60;false&#x60;.
+   */
+  isAdmin(): boolean {
+    return this.roleService.isAdmin();
+  }
+
+  /**
+   * Retrieves the list of personal records (fichas).
+   *
+   * @returns {iFichaPersonal[]} An array of personal records.
+   */
+  getFichas(): iFichaPersonal[] {
+    return this.fichas;
+  }
+
+  /**
+   * Retrieves user information by mapping data from the first element of the &#x60;fichas&#x60; array.
+   *
+   * @returns {iUser} An object containing user information, including authorities, full name,
+   * email, employee number, username, and other details.
+   *
+   * @remarks
+   * - The method assumes that the &#x60;fichas&#x60; array contains at least one element.
+   * - Default values are used for some fields, such as &#x60;authorities&#x60;, &#x60;company&#x60;, &#x60;name&#x60;, and &#x60;sn&#x60;.
+   * - The &#x60;authorities&#x60; field is set with a default role of &#x60;Roles.USER&#x60;.
+   */
+  getUserInfo(): iUser {
+    // Tomamos el primer elemento de fichas
+    const ficha &#x3D; this.fichas[0];
+    const idSolicitud &#x3D; ficha.idSolicitud;
+
+    // Mapeamos los datos de ficha y idSolicitud a iUser
+    const user: iUser &#x3D; {
+      authorities: {
+        authority: [Roles.USER], // Valor por defecto, ya que no tenemos roles en iFichaPersonal
+      },
+      cn: idSolicitud.nombreCompleto, // Nombre completo
+      company: &quot;&quot;, // Usamos cia o company si existe
+      mail: idSolicitud.correo, // Correo
+      name: &quot;&quot;, // Primer nombre
+      nomina: idSolicitud.numeroNomina, // Número de nómina
+      sn:&quot;&quot;, // Apellidos
+      userName: idSolicitud.usuario, // Nombre de usuario
+    };
+
+    // Devolvemos un array con un solo elemento
+    return user;
+  }
+
+  /**
+   * Retrieves an array of empty &quot;fichas&quot; (records).
+   *
+   * @returns An array of strings representing the empty fichas.
+   */
+  getFichasVacias(): string[]{
+    return this.fichasVacias
+  }
+
+  /**
+   * Formats and returns a string representation of a &#x60;iNomina&#x60; object.
+   *
+   * @param nomina - The &#x60;iNomina&#x60; object containing employee details.
+   * @returns A formatted string in the format &quot;nombreCompleto (numeroNomina)&quot; 
+   *          if &#x60;nomina&#x60; is provided, otherwise an empty string.
+   */
+  displayFn(nomina: iNomina): string {
+    return nomina ? &#x60;${nomina.nombreCompleto} (${nomina.numeroNomina})&#x60; : &#x27;&#x27;;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;padre&quot;&gt;
+  &lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;h1&gt;
+      Update Cabin Crew (ERP) Data Management / &lt;br /&gt;
+      Actualizar Datos Cabin Crew (PRE)
+    &lt;/h1&gt;
+
+    &lt;div class&#x3D;&quot;selector&quot;&gt;
+      &lt;mat-form-field appearance&#x3D;&quot;outline&quot; class&#x3D;&quot;full-width&quot;&gt;
+        &lt;mat-label&gt;Search / Buscar&lt;/mat-label&gt;
+        &lt;input
+          matInput
+          [formControl]&#x3D;&quot;searchQuery&quot;
+          [matAutocomplete]&#x3D;&quot;auto&quot;
+          placeholder&#x3D;&quot;Enter employee name or number / Ingresa nombre o número de nómina&quot;
+        &gt;
+        &lt;mat-autocomplete #auto&#x3D;&quot;matAutocomplete&quot; (optionSelected)&#x3D;&quot;onOptionSelected($event)&quot;&gt;
+          @for (item of filteredOptions | async; track $index) {
+            &lt;mat-option [value]&#x3D;&quot;item.numeroNomina&quot;&gt;
+              {{ item.nombreCompleto }} ({{ item.numeroNomina }})
+            &lt;/mat-option&gt;
+          }
+        &lt;/mat-autocomplete&gt;
+      &lt;/mat-form-field&gt;
+    &lt;/div&gt;
+
+    &lt;br /&gt;
+    &lt;button class&#x3D;&quot;btn&quot; (click)&#x3D;&quot;searchEmployee()&quot;&gt;Search / Buscar&lt;/button&gt;
+    @if (isAdmin()) {
+      &lt;button class&#x3D;&quot;btn&quot; (click)&#x3D;&quot;searchEmpty()&quot;&gt;Search empty / Buscar nóminas vacias&lt;/button&gt;
+    }
+  &lt;/div&gt;
+
+  @if (showContent) {
+    &lt;h1 id&#x3D;&quot;tituloFicha&quot;&gt;Personal Data / Datos Personales&lt;/h1&gt;
+    &lt;hr&gt;
+    &lt;app-ficha-user-info class&#x3D;&quot;fichaUserInfo&quot; [userInfoInput]&#x3D;&quot;getUserInfo()&quot;&gt;&lt;/app-ficha-user-info&gt;
+    &lt;app-ficha-info [ficha]&#x3D;&quot;getFichas()&quot;&gt;&lt;/app-ficha-info&gt;
+  }
+
+  @if (isAdmin()) {
+    @defer (when showTableEmpty &amp;&amp; !isLoadingEmpty) {
+      &lt;app-nominas-vacias [fichasVacias]&#x3D;&quot;getFichasVacias()&quot;&gt;&lt;/app-nominas-vacias&gt;
+    } @placeholder {
+      @if (isLoadingEmpty) {
+        &lt;div class&#x3D;&quot;loading-container&quot;&gt;
+          &lt;div class&#x3D;&quot;spinner&quot;&gt;&lt;/div&gt;
+          &lt;p&gt;Cargando nóminas vacías...&lt;/p&gt;
+        &lt;/div&gt;
+      }
+    } @error {
+      &lt;div class&#x3D;&quot;error-message&quot;&gt;Error al cargar las nóminas vacías&lt;/div&gt;
+    }
+  }
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./datos-tcp.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@use &#x27;sass:color&#x27;;
+@use &quot;sass:map&quot;;
+@use &quot;../../../../../styles&quot; as *;
+@use &quot;mixins&quot; as *;
+
+$gradient-color: map.get($custom-palette, 50);
+
+@if not $gradient-color {
+  @error &quot;$gradient-color no es un color válido. Revisa la variable.&quot;;
+}
+
+.padre {
+  width: 80%;
+  margin: 50px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  width: 50%;
+  margin: 50px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selector {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 5px;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+h1 {
+  color: map.get($custom-palette, 50);
+  font-size: 22px;
+  text-align: center;
+}
+
+.btn {
+  @include boton(map.get($custom-palette, 50), white);
+  margin: 10px;
+}
+
+.btn:hover {
+  background-color: map.get($custom-palette, 100);
+}
+
+.contact-section {
+  margin-bottom: 20px;
+  width: 90%;
+}
+
+h3 {
+  color: map.get($custom-palette, 50);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 70px;
+  margin-top: 50px;
+}
+
+.fichaUserInfo {
+  margin: 30px;
+}
+
+hr {
+  @include hr(map.get($custom-palette, 50))
+}
+
+#tituloFicha {
+  font-size: xx-large;
+}
+
+.loading-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid map.get($custom-palette, 50);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 10px;
+}
+
+.error-message {
+  color: #ff0000;
+  text-align: center;
+  margin: 20px 0;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="padre">  <div class="container">    <h1>      Update Cabin Crew (ERP) Data Management / <br />      Actualizar Datos Cabin Crew (PRE)    </h1>    <div class="selector">      <mat-form-field appearance="outline" class="full-width">        <mat-label>Search / Buscar</mat-label>        <input          matInput          [formControl]="searchQuery"          [matAutocomplete]="auto"          placeholder="Enter employee name or number / Ingresa nombre o número de nómina"        >        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onOptionSelected($event)">          @for (item of filteredOptions | async; track $index) {            <mat-option [value]="item.numeroNomina">              {{ item.nombreCompleto }} ({{ item.numeroNomina }})            </mat-option>          }        </mat-autocomplete>      </mat-form-field>    </div>    <br />    <button class="btn" (click)="searchEmployee()">Search / Buscar</button>    @if (isAdmin()) {      <button class="btn" (click)="searchEmpty()">Search empty / Buscar nóminas vacias</button>    }  </div>  @if (showContent) {    <h1 id="tituloFicha">Personal Data / Datos Personales</h1>    <hr>    <app-ficha-user-info class="fichaUserInfo" [userInfoInput]="getUserInfo()"></app-ficha-user-info>    <app-ficha-info [ficha]="getFichas()"></app-ficha-info>  }  @if (isAdmin()) {    @defer (when showTableEmpty && !isLoadingEmpty) {      <app-nominas-vacias [fichasVacias]="getFichasVacias()"></app-nominas-vacias>    } @placeholder {      @if (isLoadingEmpty) {        <div class="loading-container">          <div class="spinner"></div>          <p>Cargando nóminas vacías...</p>        </div>      }    } @error {      <div class="error-message">Error al cargar las nóminas vacías</div>    }  }</div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AvisoLegalComponent', 'selector': 'app-aviso-legal'},{'name': 'BackOfficeComponent', 'selector': 'app-back-office'},{'name': 'ComunicacionComponent', 'selector': 'app-comunicacion'},{'name': 'ComunicacionDirectaComponent', 'selector': 'app-comunicacion-directa'},{'name': 'DatosTCPComponent', 'selector': 'app-datos-tcp'},{'name': 'ErrorComponent', 'selector': ''},{'name': 'FeedbackComponent', 'selector': 'app-feedback'},{'name': 'FichaComponent', 'selector': 'app-ficha'},{'name': 'FichaInfoComponent', 'selector': 'app-ficha-info'},{'name': 'FichaPlanEmergenciaComponent', 'selector': 'app-ficha-plan-emergencia'},{'name': 'FichaUserInfoComponent', 'selector': 'app-ficha-user-info'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormulariosComponent', 'selector': 'app-formularios'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LinkerComponent', 'selector': 'app-linker'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NominaComponent', 'selector': 'app-nomina'},{'name': 'NominasVaciasComponent', 'selector': 'app-nominas-vacias'},{'name': 'PeticionVacacionesComponent', 'selector': 'app-peticion-vacaciones'},{'name': 'ReclamacionNominaComponent', 'selector': 'app-reclamacion-nomina'},{'name': 'RespuestasComponent', 'selector': 'app-respuestas'},{'name': 'SendRespuestaComponent', 'selector': 'app-send-respuesta'},{'name': 'SolicitudComponent', 'selector': 'app-solicitud'},{'name': 'TableComponent', 'selector': 'app-table'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'VacacionesComponent', 'selector': 'app-vacaciones'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'DatosTCPComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DatosTCPComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

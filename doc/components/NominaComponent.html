@@ -1,0 +1,788 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>login documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">login documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  NominaComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/home/formularios/nomina/nomina.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-nomina</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                                <code><a href="../components/UserInfoComponent.html" target="_self" >UserInfoComponent</a></code>
+                            <code>ReactiveFormsModule</code>
+                                <code><a href="../components/FeedbackComponent.html" target="_self" >FeedbackComponent</a></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./nomina.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./nomina.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#errorMessage" >errorMessage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#fb" >fb</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#modalService" >modalService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#nominaForm" >nominaForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#nominaService" >nominaService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#subject" >subject</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#saveSubject" >saveSubject</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/home/formularios/nomina/nomina.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveSubject"></a>
+                    <span class="name">
+                        <span ><b>saveSubject</b></span>
+                        <a href="#saveSubject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveSubject()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="40"
+                                    class="link-to-prism">src/app/components/home/formularios/nomina/nomina.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles the submission of the &quot;nomina&quot; form. Validates the form, sends the data to the service,
+and provides feedback to the user based on the result of the operation.</p>
+<ul>
+<li>If the form is invalid, an error message is displayed prompting the user to fill in all fields.</li>
+<li>If the form is valid, the subject value is extracted and sent to the <code>nominaService</code>.</li>
+<li>On success, a success modal is displayed, and the form is reset.</li>
+<li>On error, an error modal is displayed with a specific or generic error message, and an error message is set for the user.</li>
+</ul>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="errorMessage"></a>
+                    <span class="name">
+                        <span ><b>errorMessage</b></span>
+                        <a href="#errorMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/home/formularios/nomina/nomina.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fb"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>fb</b></span>
+                        <a href="#fb"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(FormBuilder)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/home/formularios/nomina/nomina.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modalService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>modalService</b></span>
+                        <a href="#modalService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(ModalService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/home/formularios/nomina/nomina.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nominaForm"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>nominaForm</b></span>
+                        <a href="#nominaForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/home/formularios/nomina/nomina.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nominaService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>nominaService</b></span>
+                        <a href="#nominaService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(NominaService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/home/formularios/nomina/nomina.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subject"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>subject</b></span>
+                        <a href="#subject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/components/home/formularios/nomina/nomina.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, inject } from &#x27;@angular/core&#x27;;
+import { UserInfoComponent } from &#x27;../user-info/user-info.component&#x27;;
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from &#x27;@angular/forms&#x27;;
+import { NominaService } from &#x27;@app/services/nominaService/nomina-service.service&#x27;;
+import { FeedbackComponent } from &#x27;@app/components/utils/modals/feedback/feedback.component&#x27;;
+import { ModalService } from &#x27;@app/services/modalService/modal.service&#x27;;
+
+@Component({
+  selector: &#x27;app-nomina&#x27;,
+  imports: [UserInfoComponent, ReactiveFormsModule, FeedbackComponent],
+  templateUrl: &#x27;./nomina.component.html&#x27;,
+  styleUrls: [&#x27;./nomina.component.scss&#x27;],
+})
+export class NominaComponent {
+  protected subject: string &#x3D; &#x27;&#x27;;
+  private nominaService &#x3D; inject(NominaService);
+  private modalService &#x3D; inject(ModalService);
+  errorMessage: string | null &#x3D; null;
+    protected nominaForm: FormGroup;
+      private fb &#x3D; inject(FormBuilder);
+
+  constructor() {
+      this.nominaForm &#x3D; this.fb.group({
+        subject: [&#x27;&#x27;, [Validators.required]],
+      });
+    }
+
+  /**
+   * Handles the submission of the &quot;nomina&quot; form. Validates the form, sends the data to the service,
+   * and provides feedback to the user based on the result of the operation.
+   *
+   * @remarks
+   * - If the form is invalid, an error message is displayed prompting the user to fill in all fields.
+   * - If the form is valid, the subject value is extracted and sent to the &#x60;nominaService&#x60;.
+   * - On success, a success modal is displayed, and the form is reset.
+   * - On error, an error modal is displayed with a specific or generic error message, and an error message is set for the user.
+   *
+   * @throws Will log the error details to the console if an error occurs during the service call.
+   */
+  saveSubject() {
+    this.errorMessage &#x3D; null;
+    if (this.nominaForm.invalid) {
+      this.errorMessage &#x3D; &#x27;Por favor, rellene todos los campos&#x27;;
+    } else {
+      const subjectValue &#x3D; this.nominaForm.get(&#x27;subject&#x27;)?.value;
+      this.nominaService.saveSubject(subjectValue).subscribe({
+        next: (response) &#x3D;&gt; {
+          this.modalService.showSuccess(
+            &#x27;Éxito&#x27;,
+            &#x27;La información ha sido enviada con éxito&#x27;
+          );
+          this.nominaForm.reset();
+        },
+        error: (error) &#x3D;&gt; {
+          let errorMessage &#x3D; &#x27;Error desconocido. Por favor, intenta de nuevo.&#x27;;
+          console.log(error);
+
+          if (error &amp;&amp; error.error &amp;&amp; error.error.message) {
+            errorMessage &#x3D; error.error.message; // Si la API devuelve un campo &quot;message&quot;
+          } else if (error &amp;&amp; error.message) {
+            errorMessage &#x3D; error.message; // Si es un error genérico de HTTP
+          }
+
+          this.modalService.showError(&#x27;Error&#x27;, errorMessage);
+          this.errorMessage &#x3D; &#x27;Error al enviar la comunicación. Intenta de nuevo.&#x27;;
+        },
+      });
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;h2&gt;Payroll Complaints / Reclamaciones de Nómina&lt;/h2&gt;
+  &lt;hr /&gt;
+  &lt;div class&#x3D;&quot;info-user&quot;&gt;&lt;app-user-info&gt;&lt;/app-user-info&gt;&lt;/div&gt;
+  
+  &lt;form [formGroup]&#x3D;&quot;nominaForm&quot;&gt;
+    &lt;div class&#x3D;&quot;input-group&quot;&gt;
+      &lt;input
+        type&#x3D;&quot;text&quot;
+        id&#x3D;&quot;subject&quot;
+        formControlName&#x3D;&quot;subject&quot;
+        placeholder&#x3D;&quot; &quot;
+      /&gt;
+      &lt;label for&#x3D;&quot;subject&quot;&gt;Subject / Asunto&lt;/label&gt;
+      @if (nominaForm.get(&#x27;subject&#x27;)?.touched &amp;&amp;
+      nominaForm.get(&#x27;subject&#x27;)?.invalid) {
+      &lt;div class&#x3D;&quot;error&quot;&gt;Este campo es obligatorio&lt;/div&gt;
+      }
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;sendBtnDiv&quot;&gt;
+      @if (errorMessage) {
+      &lt;p class&#x3D;&quot;error-message&quot; style&#x3D;&quot;color: red&quot;&gt;{{ errorMessage }}&lt;/p&gt;
+      }
+      &lt;button class&#x3D;&quot;send-button&quot; (click)&#x3D;&quot;saveSubject()&quot;&gt;Send / Enviar&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+  &lt;app-feedback&gt;&lt;/app-feedback&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./nomina.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@use &quot;sass:map&quot;;
+@use &quot;../../../../../styles&quot; as *;
+@use &quot;mixins&quot; as *;
+
+
+.container {
+  width: 80%;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-group{
+  @include groupInput(map.get($custom-palette, 50), red);
+  margin: 0px 30px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.send-button{
+  @include boton(map.get($custom-palette, 50), white)
+}
+
+.sendBtnDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.error-message {
+  color: #ff0000;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+hr {
+  @include hr(map.get($custom-palette, 50));
+  margin-bottom: 40px;
+}
+
+h2 {
+  color: map.get($custom-palette, 50);
+  display: flex;
+  justify-content: center;
+}
+.info-user{
+  display: flex;
+  justify-self: center;
+  width: 100%;
+  justify-content: center;
+  }
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <h2>Payroll Complaints / Reclamaciones de Nómina</h2>  <hr />  <div class="info-user"><app-user-info></app-user-info></div>    <form [formGroup]="nominaForm">    <div class="input-group">      <input        type="text"        id="subject"        formControlName="subject"        placeholder=" "      />      <label for="subject">Subject / Asunto</label>      @if (nominaForm.get(\'subject\')?.touched &&      nominaForm.get(\'subject\')?.invalid) {      <div class="error">Este campo es obligatorio</div>      }    </div>    <div class="sendBtnDiv">      @if (errorMessage) {      <p class="error-message" style="color: red">{{ errorMessage }}</p>      }      <button class="send-button" (click)="saveSubject()">Send / Enviar</button>    </div>  </form>  <app-feedback></app-feedback></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AvisoLegalComponent', 'selector': 'app-aviso-legal'},{'name': 'BackOfficeComponent', 'selector': 'app-back-office'},{'name': 'ComunicacionComponent', 'selector': 'app-comunicacion'},{'name': 'ComunicacionDirectaComponent', 'selector': 'app-comunicacion-directa'},{'name': 'DatosTCPComponent', 'selector': 'app-datos-tcp'},{'name': 'ErrorComponent', 'selector': ''},{'name': 'FeedbackComponent', 'selector': 'app-feedback'},{'name': 'FichaComponent', 'selector': 'app-ficha'},{'name': 'FichaInfoComponent', 'selector': 'app-ficha-info'},{'name': 'FichaPlanEmergenciaComponent', 'selector': 'app-ficha-plan-emergencia'},{'name': 'FichaUserInfoComponent', 'selector': 'app-ficha-user-info'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormulariosComponent', 'selector': 'app-formularios'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LinkerComponent', 'selector': 'app-linker'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NominaComponent', 'selector': 'app-nomina'},{'name': 'NominasVaciasComponent', 'selector': 'app-nominas-vacias'},{'name': 'PeticionVacacionesComponent', 'selector': 'app-peticion-vacaciones'},{'name': 'ReclamacionNominaComponent', 'selector': 'app-reclamacion-nomina'},{'name': 'RespuestasComponent', 'selector': 'app-respuestas'},{'name': 'SendRespuestaComponent', 'selector': 'app-send-respuesta'},{'name': 'SolicitudComponent', 'selector': 'app-solicitud'},{'name': 'TableComponent', 'selector': 'app-table'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'VacacionesComponent', 'selector': 'app-vacaciones'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'NominaComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NominaComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

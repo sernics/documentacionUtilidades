@@ -1,0 +1,1495 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>login documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">login documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  SolicitudComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/home/formularios/solicitud/solicitud.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-solicitud</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                                <code><a href="../components/RespuestasComponent.html" target="_self" >RespuestasComponent</a></code>
+                                <code><a href="../components/FichaPlanEmergenciaComponent.html" target="_self" >FichaPlanEmergenciaComponent</a></code>
+                                <code><a href="../components/ComunicacionDirectaComponent.html" target="_self" >ComunicacionDirectaComponent</a></code>
+                                <code><a href="../components/ReclamacionNominaComponent.html" target="_self" >ReclamacionNominaComponent</a></code>
+                                <code><a href="../components/PeticionVacacionesComponent.html" target="_self" >PeticionVacacionesComponent</a></code>
+                                <code><a href="../components/SendRespuestaComponent.html" target="_self" >SendRespuestaComponent</a></code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./solicitud.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./solicitud.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#id" >id</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#localStorage" >localStorage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#responseHeader" >responseHeader</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#respuesta" >respuesta</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#router" >router</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#solicitudService" >solicitudService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#tipoSolicitud" >tipoSolicitud</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#downloadPdf" >downloadPdf</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#extractIdFromUrl" >extractIdFromUrl</a>
+                            </li>
+                            <li>
+                                <a href="#getFecha" >getFecha</a>
+                            </li>
+                            <li>
+                                <a href="#getId" >getId</a>
+                            </li>
+                            <li>
+                                <a href="#getPdf" >getPdf</a>
+                            </li>
+                            <li>
+                                <a href="#getResponsibleName" >getResponsibleName</a>
+                            </li>
+                            <li>
+                                <a href="#getRolAdmin" >getRolAdmin</a>
+                            </li>
+                            <li>
+                                <a href="#handleResponseByTipoSolicitud" >handleResponseByTipoSolicitud</a>
+                            </li>
+                            <li>
+                                <a href="#return" >return</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/components/home/formularios/solicitud/solicitud.component.ts:42</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="downloadPdf"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>downloadPdf</b></span>
+                        <a href="#downloadPdf"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>downloadPdf(data: BlobPart, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="262"
+                                    class="link-to-prism">src/app/components/home/formularios/solicitud/solicitud.component.ts:262</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Downloads a PDF file generated from the provided data and assigns it a filename
+based on the given ID.</p>
+<p>This method creates a Blob object from the provided data, generates a temporary
+URL for the Blob, and triggers a download of the file. After the download is
+initiated, the temporary URL is revoked to free up resources.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                        <code>BlobPart</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The content of the PDF file as a BlobPart.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>A unique identifier used to name the downloaded PDF file.</li>
+</ul>
+<p>This method creates a Blob object from the provided data, generates a temporary
+URL for the Blob, and triggers a download of the file. After the download is
+initiated, the temporary URL is revoked to free up resources.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="extractIdFromUrl"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>extractIdFromUrl</b></span>
+                        <a href="#extractIdFromUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>extractIdFromUrl()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="247"
+                                    class="link-to-prism">src/app/components/home/formularios/solicitud/solicitud.component.ts:247</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Extracts the last segment of the current router URL, which is typically used as an identifier.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A string representing the extracted ID from the URL. If the URL does not contain any segments, an empty string is returned.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFecha"></a>
+                    <span class="name">
+                        <span ><b>getFecha</b></span>
+                        <a href="#getFecha"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFecha(type: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="136"
+                                    class="link-to-prism">src/app/components/home/formularios/solicitud/solicitud.component.ts:136</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Retrieves a formatted date string based on the provided type.</p>
+<ul>
+<li><code>0</code> for the creation date (<code>fechaCreacion</code>).</li>
+<li><code>1</code> for the closure date (<code>fechaCierre</code>).
+ or <code>null</code> if the date is not available.</li>
+</ul>
+<p>The method determines the appropriate date based on the <code>tipoSolicitud</code> property
+and the corresponding response object (<code>respuesta</code>). It formats the date if a valid
+timestamp is found.</p>
+<p>The <code>tipoSolicitud</code> is expected to be one of the <code>TipoSolicitudEnum</code> values, and the
+response object is mapped accordingly to retrieve the relevant date fields.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>type</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>The type of date to retrieve:</li>
+<li><code>0</code> for the creation date (<code>fechaCreacion</code>).</li>
+<li><code>1</code> for the closure date (<code>fechaCierre</code>).</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>string | null</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>A formatted date string in the format <code>DD/MM/YYYY HH:mm</code> if the date exists,
+or <code>null</code> if the date is not available.</p>
+<p>The method determines the appropriate date based on the <code>tipoSolicitud</code> property
+and the corresponding response object (<code>respuesta</code>). It formats the date if a valid
+timestamp is found.</p>
+<p>The <code>tipoSolicitud</code> is expected to be one of the <code>TipoSolicitudEnum</code> values, and the
+response object is mapped accordingly to retrieve the relevant date fields.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getId"></a>
+                    <span class="name">
+                        <span ><b>getId</b></span>
+                        <a href="#getId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getId()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="116"
+                                    class="link-to-prism">src/app/components/home/formularios/solicitud/solicitud.component.ts:116</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Retrieves the ID associated with this component.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The ID as a string or number.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPdf"></a>
+                    <span class="name">
+                        <span ><b>getPdf</b></span>
+                        <a href="#getPdf"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPdf()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="225"
+                                    class="link-to-prism">src/app/components/home/formularios/solicitud/solicitud.component.ts:225</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Generates and downloads a PDF based on the current request data.</p>
+<p>This method checks if the necessary data (<code>responseHeader</code>, <code>id</code>, and <code>tipoSolicitud</code>)
+is available before attempting to generate the PDF. If any required data is missing,
+it logs an error message to the console and exits early.</p>
+<p>If all required data is present, it calls the <code>getPdf</code> method of the <code>solicitudService</code>
+to fetch the PDF. Upon a successful response, it triggers the <code>downloadPdf</code> method
+to handle the file download. If an error occurs during the process, it logs the error
+to the console.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getResponsibleName"></a>
+                    <span class="name">
+                        <span ><b>getResponsibleName</b></span>
+                        <a href="#getResponsibleName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getResponsibleName()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="191"
+                                    class="link-to-prism">src/app/components/home/formularios/solicitud/solicitud.component.ts:191</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Retrieves the name of the responsible person based on the type of request.</p>
+<ul>
+<li>This method checks the <code>respuesta</code> property to determine the responsible person&#39;s name.</li>
+<li>If <code>respuesta</code> is not defined, the method returns <code>null</code>.</li>
+<li>For the <code>FichaPlanEmergencia</code> request type, it extracts the <code>responsable</code> property from the response.</li>
+<li>For other request types, it defaults to returning <code>null</code>.</li>
+</ul>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-html">```typescript
+const responsibleName = component.getResponsibleName();
+console.log(responsibleName); // Outputs the responsible name or null</code></pre></div><b>Example :</b><div><pre class="line-numbers"><code class="language-none"></code></pre></div></div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>The name of the responsible person if available, or <code>null</code> if not applicable.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getRolAdmin"></a>
+                    <span class="name">
+                        <span ><b>getRolAdmin</b></span>
+                        <a href="#getRolAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getRolAdmin()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="206"
+                                    class="link-to-prism">src/app/components/home/formularios/solicitud/solicitud.component.ts:206</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Determines if the current user has an admin role.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p><code>true</code> if the user&#39;s role is admin, otherwise <code>false</code>.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleResponseByTipoSolicitud"></a>
+                    <span class="name">
+                        <span ><b>handleResponseByTipoSolicitud</b></span>
+                        <a href="#handleResponseByTipoSolicitud"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleResponseByTipoSolicitud()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="72"
+                                    class="link-to-prism">src/app/components/home/formularios/solicitud/solicitud.component.ts:72</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Handles the response based on the type of request (<code>tipoSolicitud</code>).
+This method uses a helper function to subscribe to the appropriate response
+observable and assigns the result to the <code>respuesta</code> property.</p>
+<p>The method supports the following request types:</p>
+<ul>
+<li><code>FichaPlanEmergencia</code>: Retrieves a response of type <code>IResponseFicha</code>.</li>
+<li><code>ComunicacionDirecta</code>: Retrieves a response of type <code>iResponseCommunication</code>.</li>
+<li><code>ReclamacionNomina</code>: Retrieves a response of type <code>iResponseNomina</code>.</li>
+<li><code>PeticionVacaciones</code>: Retrieves a response of type <code>iResponseVacaciones</code>.</li>
+</ul>
+<p>The <code>ResponseSolicitud</code> class is used to fetch the response based on the <code>id</code>.
+Errors during the response retrieval are logged to the console.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="return"></a>
+                    <span class="name">
+                        <span ><b>return</b></span>
+                        <a href="#return"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>return()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="107"
+                                    class="link-to-prism">src/app/components/home/formularios/solicitud/solicitud.component.ts:107</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="id"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>id</b></span>
+                        <a href="#id"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/components/home/formularios/solicitud/solicitud.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="localStorage"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>localStorage</b></span>
+                        <a href="#localStorage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(LocalStorageService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/components/home/formularios/solicitud/solicitud.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="responseHeader"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>responseHeader</b></span>
+                        <a href="#responseHeader"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IResponseCabecera.html" target="_self" >IResponseCabecera | null</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/components/home/formularios/solicitud/solicitud.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="respuesta"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>respuesta</b></span>
+                        <a href="#respuesta"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#tResponse" target="_self" >tResponse | null</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/components/home/formularios/solicitud/solicitud.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="router"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>router</b></span>
+                        <a href="#router"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(Router)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/components/home/formularios/solicitud/solicitud.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="solicitudService"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>solicitudService</b></span>
+                        <a href="#solicitudService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>inject(SolicitudService)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/components/home/formularios/solicitud/solicitud.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tipoSolicitud"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                        <span ><b>tipoSolicitud</b></span>
+                        <a href="#tipoSolicitud"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/components/home/formularios/solicitud/solicitud.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, inject } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { SolicitudService } from &#x27;@app/services/solicitudService/solicitud.service&#x27;;
+import { LocalStorageService } from &#x27;@app/services&#x27;;
+import { localStorageEnum } from &#x27;@app/enums/localStorageEnum&#x27;;
+import { IResponseCabecera } from &#x27;@app/models/iResponseCabecera&#x27;;
+import { TipoSolicitudEnum } from &#x27;@app/enums/TipoSolicitudEnum&#x27;;
+import { ResponseSolicitud } from &#x27;@app/clases/responseSolicitud&#x27;;
+import { IResponseFicha } from &#x27;@app/models/responseSolicitud/iResponseFicha&#x27;;
+import { tResponse } from &#x27;@app/models/responseSolicitud/tResponse&#x27;;
+import { iResponseCommunication } from &#x27;@app/models/responseSolicitud/iResponseCommunication&#x27;;
+import { iResponseNomina } from &#x27;@app/models/responseSolicitud/iResponseNomina&#x27;;
+import { iResponseVacaciones } from &#x27;@app/models/responseSolicitud/iResponseVacaciones&#x27;;
+import { Roles } from &#x27;@app/enums/roles&#x27;;
+import { RespuestasComponent } from &#x27;./respuestas/respuestas.component&#x27;;
+import { FichaPlanEmergenciaComponent } from &#x27;./ficha-plan-emergencia/ficha-plan-emergencia.component&#x27;;
+import { ComunicacionDirectaComponent } from &#x27;./comunicacion-directa/comunicacion-directa.component&#x27;;
+import { ReclamacionNominaComponent } from &#x27;./reclamacion-nomina/reclamacion-nomina.component&#x27;;
+import { PeticionVacacionesComponent } from &#x27;./peticion-vacaciones/peticion-vacaciones.component&#x27;;
+import { SendRespuestaComponent } from &quot;./send-respuesta/send-respuesta.component&quot;;
+
+@Component({
+  selector: &#x27;app-solicitud&#x27;,
+  imports: [
+    RespuestasComponent,
+    FichaPlanEmergenciaComponent,
+    ComunicacionDirectaComponent,
+    ReclamacionNominaComponent,
+    PeticionVacacionesComponent,
+    SendRespuestaComponent
+],
+  templateUrl: &#x27;./solicitud.component.html&#x27;,
+  styleUrl: &#x27;./solicitud.component.scss&#x27;,
+})
+export class SolicitudComponent {
+  private solicitudService &#x3D; inject(SolicitudService);
+  private localStorage &#x3D; inject(LocalStorageService);
+  private id: string;
+  protected responseHeader: IResponseCabecera | null &#x3D; null;
+  protected respuesta: tResponse | null &#x3D; null;
+  protected tipoSolicitud: string;
+  protected router &#x3D; inject(Router);
+
+  constructor() {
+    this.tipoSolicitud &#x3D; this.localStorage.getItem(
+      localStorageEnum.TIPO_SOLICITUD
+    ) as string;
+    this.id &#x3D; this.extractIdFromUrl();
+    this.solicitudService.callSolicitud(this.id).subscribe((res) &#x3D;&gt; {
+      this.responseHeader &#x3D; res;
+    });
+
+    this.handleResponseByTipoSolicitud();
+  }
+
+  /**
+   * Handles the response based on the type of request (&#x60;tipoSolicitud&#x60;).
+   * This method uses a helper function to subscribe to the appropriate response
+   * observable and assigns the result to the &#x60;respuesta&#x60; property.
+   *
+   * The method supports the following request types:
+   * - &#x60;FichaPlanEmergencia&#x60;: Retrieves a response of type &#x60;IResponseFicha&#x60;.
+   * - &#x60;ComunicacionDirecta&#x60;: Retrieves a response of type &#x60;iResponseCommunication&#x60;.
+   * - &#x60;ReclamacionNomina&#x60;: Retrieves a response of type &#x60;iResponseNomina&#x60;.
+   * - &#x60;PeticionVacaciones&#x60;: Retrieves a response of type &#x60;iResponseVacaciones&#x60;.
+   *
+   * @remarks
+   * The &#x60;ResponseSolicitud&#x60; class is used to fetch the response based on the &#x60;id&#x60;.
+   * Errors during the response retrieval are logged to the console.
+   *
+   */
+  handleResponseByTipoSolicitud() {
+    const responseClass &#x3D; new ResponseSolicitud(this.id);
+
+    const handleResponse &#x3D; &lt;T&gt;(
+      responseType: TipoSolicitudEnum,
+      logMessage: string
+    ) &#x3D;&gt; {
+      if (this.tipoSolicitud &#x3D;&#x3D;&#x3D; responseType) {
+        responseClass.getRespuesta&lt;T&gt;().subscribe({
+          next: (res) &#x3D;&gt; {
+            this.respuesta &#x3D; res as tResponse;
+          },
+          error: (err) &#x3D;&gt; console.error(&#x60;Error al obtener ${logMessage}:&#x60;, err),
+        });
+      }
+    };
+
+    handleResponse&lt;IResponseFicha&gt;(
+      TipoSolicitudEnum.FichaPlanEmergencia,
+      &#x27;la ficha&#x27;
+    );
+    handleResponse&lt;iResponseCommunication&gt;(
+      TipoSolicitudEnum.ComunicacionDirecta,
+      &#x27;la comunicación&#x27;
+    );
+    handleResponse&lt;iResponseNomina&gt;(
+      TipoSolicitudEnum.ReclamacionNomina,
+      &#x27;la nómina&#x27;
+    );
+    handleResponse&lt;iResponseVacaciones&gt;(
+      TipoSolicitudEnum.PeticionVacaciones,
+      &#x27;las vacaciones&#x27;
+    );
+  }
+
+  return() {
+    this.router.navigate([&#x27;/formularios/backOffice&#x27;]);
+  }
+
+  /**
+   * Retrieves the ID associated with this component.
+   *
+   * @returns The ID as a string or number.
+   */
+  getId() {
+    return this.id;
+  }
+
+  /**
+   * Retrieves a formatted date string based on the provided type.
+   *
+   * @param type - The type of date to retrieve:
+   *   - &#x60;0&#x60; for the creation date (&#x60;fechaCreacion&#x60;).
+   *   - &#x60;1&#x60; for the closure date (&#x60;fechaCierre&#x60;).
+   * @returns A formatted date string in the format &#x60;DD/MM/YYYY HH:mm&#x60; if the date exists,
+   *          or &#x60;null&#x60; if the date is not available.
+   *
+   * The method determines the appropriate date based on the &#x60;tipoSolicitud&#x60; property
+   * and the corresponding response object (&#x60;respuesta&#x60;). It formats the date if a valid
+   * timestamp is found.
+   *
+   * The &#x60;tipoSolicitud&#x60; is expected to be one of the &#x60;TipoSolicitudEnum&#x60; values, and the
+   * response object is mapped accordingly to retrieve the relevant date fields.
+   */
+  getFecha(type: number): string | null {
+    const formatFecha &#x3D; (timestamp: number | null): string | null &#x3D;&gt; {
+      if (!timestamp) return null;
+      const date &#x3D; new Date(timestamp);
+      return &#x60;${date.getDate().toString().padStart(2, &#x27;0&#x27;)}/${(
+        date.getMonth() + 1
+      )
+        .toString()
+        .padStart(2, &#x27;0&#x27;)}/${date.getFullYear()} ${date
+        .getHours()
+        .toString()
+        .padStart(2, &#x27;0&#x27;)}:${date.getMinutes().toString().padStart(2, &#x27;0&#x27;)}&#x60;;
+    };
+
+    const getTimestamp &#x3D; (obj: any, type: number): number | null &#x3D;&gt; {
+      if (type &#x3D;&#x3D;&#x3D; 1 &amp;&amp; obj.fechaCierre &#x3D;&#x3D; null) return null;
+      return type &#x3D;&#x3D;&#x3D; 0 ? obj.fechaCreacion : obj.fechaCierre;
+    };
+
+    const responseMap: Record&lt;TipoSolicitudEnum, any&gt; &#x3D; {
+      [TipoSolicitudEnum.FichaPlanEmergencia]: this.respuesta as IResponseFicha,
+      [TipoSolicitudEnum.ComunicacionDirecta]: (
+        this.respuesta as iResponseCommunication
+      )?.idSolicitud,
+      [TipoSolicitudEnum.ReclamacionNomina]: (this.respuesta as iResponseNomina)
+        ?.idSolicitud,
+      [TipoSolicitudEnum.PeticionVacaciones]: (
+        this.respuesta as iResponseVacaciones
+      )?.idSolicitud,
+    };
+
+    if (!this.respuesta) return null;
+    const responseObj &#x3D; responseMap[this.tipoSolicitud as TipoSolicitudEnum];
+
+    const timestamp &#x3D; getTimestamp(responseObj, type);
+    return formatFecha(timestamp);
+  }
+
+  /**
+   * Retrieves the name of the responsible person based on the type of request.
+   *
+   * @returns {string | null} The name of the responsible person if available, or &#x60;null&#x60; if not applicable.
+   *
+   * @remarks
+   * - This method checks the &#x60;respuesta&#x60; property to determine the responsible person&#x27;s name.
+   * - If &#x60;respuesta&#x60; is not defined, the method returns &#x60;null&#x60;.
+   * - For the &#x60;FichaPlanEmergencia&#x60; request type, it extracts the &#x60;responsable&#x60; property from the response.
+   * - For other request types, it defaults to returning &#x60;null&#x60;.
+   *
+   * @example
+   * &#x60;&#x60;&#x60;typescript
+   * const responsibleName &#x3D; component.getResponsibleName();
+   * console.log(responsibleName); // Outputs the responsible name or null
+   * &#x60;&#x60;&#x60;
+   */
+  getResponsibleName() {
+    if (!this.respuesta) return null;
+    switch (this.tipoSolicitud as TipoSolicitudEnum) {
+      case TipoSolicitudEnum.FichaPlanEmergencia:
+        return (this.respuesta as IResponseFicha).responsable;
+      default:
+        return null; // Provide a default return value
+    }
+  }
+
+  /**
+   * Determines if the current user has an admin role.
+   *
+   * @returns {boolean} &#x60;true&#x60; if the user&#x27;s role is admin, otherwise &#x60;false&#x60;.
+   */
+  getRolAdmin(): boolean {
+    return this.localStorage.getItem(localStorageEnum.USER_ROLE) &#x3D;&#x3D; Roles.ADMIN;
+  }
+
+  /**
+   * Generates and downloads a PDF based on the current request data.
+   *
+   * This method checks if the necessary data (&#x60;responseHeader&#x60;, &#x60;id&#x60;, and &#x60;tipoSolicitud&#x60;)
+   * is available before attempting to generate the PDF. If any required data is missing,
+   * it logs an error message to the console and exits early.
+   *
+   * If all required data is present, it calls the &#x60;getPdf&#x60; method of the &#x60;solicitudService&#x60;
+   * to fetch the PDF. Upon a successful response, it triggers the &#x60;downloadPdf&#x60; method
+   * to handle the file download. If an error occurs during the process, it logs the error
+   * to the console.
+   *
+   * @throws Will log an error if &#x60;responseHeader&#x60; is not available.
+   * @throws Will log an error if &#x60;id&#x60; or &#x60;tipoSolicitud&#x60; is missing.
+   */
+  getPdf() {
+    if (!this.responseHeader) {
+      console.error(&#x27;No hay respuesta disponible para generar el PDF.&#x27;);
+      return;
+    }
+
+    if (!this.id || !this.tipoSolicitud) {
+      console.error(&#x27;Faltan datos necesarios para generar el PDF.&#x27;);
+      return;
+    }
+
+    this.solicitudService.getPdf(this.id, this.tipoSolicitud).subscribe({
+      next: (res) &#x3D;&gt; this.downloadPdf(res, this.id),
+      error: (err) &#x3D;&gt; console.error(&#x27;Error al generar el PDF:&#x27;, err),
+    });
+  }
+
+  /**
+   * Extracts the last segment of the current router URL, which is typically used as an identifier.
+   *
+   * @returns A string representing the extracted ID from the URL. If the URL does not contain any segments, an empty string is returned.
+   */
+  private extractIdFromUrl(): string {
+    return this.router.url.split(&#x27;/&#x27;).pop() ?? &#x27;&#x27;;
+  }
+
+  /**
+   * Downloads a PDF file generated from the provided data and assigns it a filename
+   * based on the given ID.
+   *
+   * @param data - The content of the PDF file as a BlobPart.
+   * @param id - A unique identifier used to name the downloaded PDF file.
+   *
+   * This method creates a Blob object from the provided data, generates a temporary
+   * URL for the Blob, and triggers a download of the file. After the download is
+   * initiated, the temporary URL is revoked to free up resources.
+   */
+  private downloadPdf(data: BlobPart, id: string): void {
+    const blob &#x3D; new Blob([data], { type: &#x27;application/pdf&#x27; });
+    const url &#x3D; window.URL.createObjectURL(blob);
+    const a &#x3D; document.createElement(&#x27;a&#x27;);
+    a.href &#x3D; url;
+    a.download &#x3D; &#x60;solicitud_PDF_${id}.pdf&#x60;;
+    a.click();
+    window.URL.revokeObjectURL(url); // Clean up the URL object
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;header&quot;&gt;
+  &lt;button class&#x3D;&quot;back-button&quot; (click)&#x3D;&quot;return()&quot;&gt;Back / Volver&lt;/button&gt;
+  &lt;button class&#x3D;&quot;download-button&quot; (click)&#x3D;&quot;getPdf()&quot;&gt;
+    Download PDF / Descargar PDF
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;h1 class&#x3D;&quot;title&quot;&gt;{{ this.responseHeader?.tipoSolicitud?.titulo }}&lt;/h1&gt;
+
+  &lt;section class&#x3D;&quot;requester-data&quot;&gt;
+    &lt;div class&#x3D;&quot;field&quot;&gt;
+      &lt;h2&gt;Requester data / Datos del solicitante&lt;/h2&gt;
+      &lt;p&gt;Name / Nombre Completo&lt;/p&gt;
+      &lt;input type&#x3D;&quot;text&quot; [value]&#x3D;&quot;this.responseHeader?.nombreCompleto&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;field&quot;&gt;
+      &lt;p&gt;User / Usuario&lt;/p&gt;
+      &lt;input type&#x3D;&quot;text&quot; [value]&#x3D;&quot;this.responseHeader?.usuario&quot; /&gt;
+      &lt;!-- modificar lo que ponga en value, es lo que aparece debajo de la info de user en este caso --&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;field&quot;&gt;
+      &lt;p&gt;Employee Number / Nº Empleado&lt;/p&gt;
+      &lt;input type&#x3D;&quot;text&quot; [value]&#x3D;&quot;this.responseHeader?.numeroNomina&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;field&quot;&gt;
+      &lt;p&gt;Email / Correo electrónico&lt;/p&gt;
+      &lt;input type&#x3D;&quot;email&quot; [value]&#x3D;&quot;this.responseHeader?.correo&quot; /&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- Aqui empiezan las diferencias entre los 4 tipos de solicitud --&gt;
+  @switch(this.tipoSolicitud) {
+    @case(&#x27;FichaPlanEmergencia&#x27;) {
+      &lt;app-ficha-plan-emergencia [datos]&#x3D;&quot;respuesta&quot;/&gt;
+    }
+    @case (&#x27;ComunicacionDirecta&#x27;) {
+      &lt;app-comunicacion-directa [datos]&#x3D;&quot;respuesta&quot;/&gt;
+    }
+    @case (&#x27;ReclamacionNomina&#x27;) {
+      &lt;app-reclamacion-nomina [datos]&#x3D;&quot;respuesta&quot;/&gt;
+    }
+    @case (&#x27;PeticionVacaciones&#x27;) {
+      &lt;app-peticion-vacaciones [datos]&#x3D;&quot;respuesta&quot;/&gt;
+    }
+  }
+
+  &lt;!-- Aqui terminan las diferencias entre los 4 tipos de solicitud --&gt;
+
+  &lt;hr /&gt;
+
+  &lt;section class&#x3D;&quot;request-status&quot;&gt;
+    &lt;h2&gt;Request status data / Datos del estado de la solicitud&lt;/h2&gt;
+    &lt;p&gt;&lt;strong&gt;Request Number / Número de la solicitud&lt;/strong&gt;&lt;/p&gt;
+    &lt;p&gt;{{ this.getId() }}&lt;/p&gt;
+    &lt;p&gt;
+      &lt;strong&gt;Request Creation Date / Fecha de creación de la solicitud&lt;/strong&gt;
+    &lt;/p&gt;
+    &lt;p&gt;{{ this.getFecha(0) }}&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Request Close Date / Fecha de cierre de la solicitud&lt;/strong&gt;&lt;/p&gt;
+    &lt;p&gt;
+      @if(this.getFecha(1) &#x3D;&#x3D; null) { -- } @else {
+      {{ this.getFecha(1) }}
+      }
+    &lt;/p&gt;
+    @if (this.responseHeader !&#x3D; null) {
+      &lt;app-send-respuesta [responsable]&#x3D;&quot;this.responseHeader.responsable&quot; [estado]&#x3D;&quot;responseHeader.estado&quot; [correoEnvio]&#x3D;&quot;this.responseHeader.correo&quot;&gt;&lt;/app-send-respuesta&gt;
+    }
+
+  &lt;/section&gt;
+
+  &lt;app-respuestas [id]&#x3D;&quot;this.getId()&quot; /&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="header">  <button class="back-button" (click)="return()">Back / Volver</button>  <button class="download-button" (click)="getPdf()">    Download PDF / Descargar PDF  </button></div><div class="container">  <h1 class="title">{{ this.responseHeader?.tipoSolicitud?.titulo }}</h1>  <section class="requester-data">    <div class="field">      <h2>Requester data / Datos del solicitante</h2>      <p>Name / Nombre Completo</p>      <input type="text" [value]="this.responseHeader?.nombreCompleto" />    </div>    <div class="field">      <p>User / Usuario</p>      <input type="text" [value]="this.responseHeader?.usuario" />      <!-- modificar lo que ponga en value, es lo que aparece debajo de la info de user en este caso -->    </div>    <div class="field">      <p>Employee Number / Nº Empleado</p>      <input type="text" [value]="this.responseHeader?.numeroNomina" />    </div>    <div class="field">      <p>Email / Correo electrónico</p>      <input type="email" [value]="this.responseHeader?.correo" />    </div>  </section>  <!-- Aqui empiezan las diferencias entre los 4 tipos de solicitud -->  @switch(this.tipoSolicitud) {    @case(\'FichaPlanEmergencia\') {      <app-ficha-plan-emergencia [datos]="respuesta"/>    }    @case (\'ComunicacionDirecta\') {      <app-comunicacion-directa [datos]="respuesta"/>    }    @case (\'ReclamacionNomina\') {      <app-reclamacion-nomina [datos]="respuesta"/>    }    @case (\'PeticionVacaciones\') {      <app-peticion-vacaciones [datos]="respuesta"/>    }  }  <!-- Aqui terminan las diferencias entre los 4 tipos de solicitud -->  <hr />  <section class="request-status">    <h2>Request status data / Datos del estado de la solicitud</h2>    <p><strong>Request Number / Número de la solicitud</strong></p>    <p>{{ this.getId() }}</p>    <p>      <strong>Request Creation Date / Fecha de creación de la solicitud</strong>    </p>    <p>{{ this.getFecha(0) }}</p>    <p><strong>Request Close Date / Fecha de cierre de la solicitud</strong></p>    <p>      @if(this.getFecha(1) == null) { -- } @else {      {{ this.getFecha(1) }}      }    </p>    @if (this.responseHeader != null) {      <app-send-respuesta [responsable]="this.responseHeader.responsable" [estado]="responseHeader.estado" [correoEnvio]="this.responseHeader.correo"></app-send-respuesta>    }  </section>  <app-respuestas [id]="this.getId()" /></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AvisoLegalComponent', 'selector': 'app-aviso-legal'},{'name': 'BackOfficeComponent', 'selector': 'app-back-office'},{'name': 'ComunicacionComponent', 'selector': 'app-comunicacion'},{'name': 'ComunicacionDirectaComponent', 'selector': 'app-comunicacion-directa'},{'name': 'DatosTCPComponent', 'selector': 'app-datos-tcp'},{'name': 'ErrorComponent', 'selector': ''},{'name': 'FeedbackComponent', 'selector': 'app-feedback'},{'name': 'FichaComponent', 'selector': 'app-ficha'},{'name': 'FichaInfoComponent', 'selector': 'app-ficha-info'},{'name': 'FichaPlanEmergenciaComponent', 'selector': 'app-ficha-plan-emergencia'},{'name': 'FichaUserInfoComponent', 'selector': 'app-ficha-user-info'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormulariosComponent', 'selector': 'app-formularios'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LinkerComponent', 'selector': 'app-linker'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NominaComponent', 'selector': 'app-nomina'},{'name': 'NominasVaciasComponent', 'selector': 'app-nominas-vacias'},{'name': 'PeticionVacacionesComponent', 'selector': 'app-peticion-vacaciones'},{'name': 'ReclamacionNominaComponent', 'selector': 'app-reclamacion-nomina'},{'name': 'RespuestasComponent', 'selector': 'app-respuestas'},{'name': 'SendRespuestaComponent', 'selector': 'app-send-respuesta'},{'name': 'SolicitudComponent', 'selector': 'app-solicitud'},{'name': 'TableComponent', 'selector': 'app-table'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'VacacionesComponent', 'selector': 'app-vacaciones'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SolicitudComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SolicitudComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
